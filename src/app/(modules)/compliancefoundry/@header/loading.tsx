@@ -1,4 +1,4 @@
 export default function Loading() {
-    return <div>Loading Header...</div>;
+    return <div className="text-primary">Loading Header...</div>;
   }
   

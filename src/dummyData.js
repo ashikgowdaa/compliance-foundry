@@ -1,5 +1,5 @@
 export  const headerDataWebsite = {
-  logoImage: "", 
+  logoImage: "https://media.licdn.com/dms/image/v2/D560BAQHI9GXVQmSMDA/company-logo_200_200/company-logo_200_200/0/1697048974016/compliancefoundry_logo?e=1752710400&v=beta&t=wyCT94nYtvvl8hsL-9REJw1uDZEgoF66UIa7FzN8WYU", 
   navLinks: [
     { label: "Compliance foundry", href: "/compliancefoundry" },
     { label: "Fixplan Ai", href: "/fixpliance" },

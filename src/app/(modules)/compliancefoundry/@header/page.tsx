@@ -1,6 +1,14 @@
+import { getMethod } from "@/app/utils-api/getMethod";
 import Header from "@/components/Header";
-import { headerData } from "@/dummyData";
 
-export default function HeaderSection() {
-  return <Header headerData={headerData} />;
+export default async function HeaderSection() {
+  const data = await getMethod({
+    url: "header-websites?populate[headerData][populate]=*",
+    options: {
+      cache: "force-cache", 
+    },
+  });
+
+
+  return <Header headerData={data.data[0].headerData} />;
 }

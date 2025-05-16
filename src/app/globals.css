@@ -27,12 +27,12 @@ body {
 
   /* HEADER TEXT */
   .bannerHeader {
-    @apply text-6xl font-extralight text-center z-10
+    @apply text-6xl font-extralight text-center z-2
   }
 
   /* SUB HEADER TEXT */
   .bannerSubHeader {
-    @apply text-xl font-light text-center z-10
+    @apply text-xl font-light text-center z-2
   }
 
   .footer-category-header {
