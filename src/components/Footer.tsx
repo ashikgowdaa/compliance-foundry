@@ -32,9 +32,7 @@ const Footer = ({footerData}: { footerData: FooterData[] }) => {
       ))}
     </Flex>
    </Wrapper>
-   <Wrapper className='bg-primary'>
 
-   </Wrapper>
     </>
   )
 }

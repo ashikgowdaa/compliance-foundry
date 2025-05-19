@@ -14,7 +14,7 @@ export async function getMethod({url, options = {}}:Props) {
         ...options,
         // You can add defaults here, e.g.:
         // headers: { 'Content-Type': 'application/json', ...options.headers },
-        cache: 'force-cache', // or 'no-store' depending on your needs
+        // cache: 'force-cache', // or 'no-store' depending on your needs
       });
   
       if (!res.ok) {

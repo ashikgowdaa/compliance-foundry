@@ -1,7 +1,8 @@
+"use client";
+import React, { useState, useRef } from "react";
 import Flex from "@/utitly-css/Flex";
 import Wrapper from "@/utitly-css/Wrapper";
 import Link from "next/link";
-import React from "react";
 
 
 type Subtype = {
@@ -18,54 +19,72 @@ type NavLink = {
 };
 
 type HeaderProps = {
-  headerData: NavLink[]; // headerData is an array of NavLink objects
+  headerData: NavLink[]; 
 };
 
 
 
 const Header: React.FC<HeaderProps> = ({ headerData }) => {
+  const [openId, setOpenId] = useState<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleEnter = (id: number) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setOpenId(id);
+  };
+
+  const handleLeave = () => {
+    timerRef.current = setTimeout(() => setOpenId(null), 300);
+  };
+
   return (
     <Wrapper className="bg-primary">
-      <Flex justify="around">
-        <Flex justify="start" width="half">
-          {/* Uncomment and update src if you want to show logo */}
-          {/* <Image
-            src={headerData.logoImage}
-            alt="logo"
-            width={80}
-            height={80}
-          /> */}
+      <Flex justify="around" className="py-3">
+        {/* logo & title */}
+        <Flex justify="start" className="w-1/4">
           <h1 className="font-bold">Compliance Foundry</h1>
         </Flex>
 
-        <Flex justify="center" gap="10">
+        {/* nav */}
+        <Flex justify="between" gap="4">
           {Array.isArray(headerData) &&
-            headerData.map((item) => (
-              <div
-                key={`${item.id}`}
-                className="relative group cursor-pointer"
+            headerData.map(item => (
+              <span
+                key={item.id}
+                className="relative inline-block cursor-pointer"
+                onMouseEnter={() => handleEnter(item.id)}
+                onMouseLeave={handleLeave}
               >
-                <Link href={item.routes}>
-                  <span>{item.title}</span>
-                </Link>
+                <Link href={item.routes ?? '/'}>{item.title}</Link>
 
-                {item.Subtype && item.Subtype.length > 0 && (
-                  <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-white text-black p-2 rounded shadow-lg z-30 min-w-[150px]">
-                    {item.Subtype.map((sub) => (
-                      <div
-                        key={`sub-${sub.id}`}
-                        className="py-1 hover:underline"
+                {/* render only while openId matches */}
+                {openId === item.id && (item.Subtype ?? []).length > 0 && (
+                  <div
+                    className="
+                      absolute left-0 top-full mt-2
+                      bg-white text-black p-2 rounded shadow-lg z-30
+                      min-w-[150px]
+                    "
+                    onMouseEnter={() => handleEnter(item.id)}
+                    onMouseLeave={handleLeave}
+                  >
+                    {(item?.Subtype ?? []).map(sub => (
+                      <Link
+                        key={sub.id}
+                        href={sub.route ?? '/'}
+                        className="block py-1 hover:underline"
                       >
-                        <Link href={sub.route}>{sub.title}</Link>
-                      </div>
+                        {sub.title}
+                      </Link>
                     ))}
                   </div>
                 )}
-              </div>
+              </span>
             ))}
         </Flex>
 
-        <Flex justify="center" width="half">
+        {/* CTA */}
+        <Flex justify="center" className="w-1/4">
           <span className="border-amber-50 border-2 p-2 rounded-md">
             Get in Touch
           </span>
@@ -74,5 +93,6 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
     </Wrapper>
   );
 };
+
 
 export default Header;

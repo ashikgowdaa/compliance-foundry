@@ -1,4 +1,5 @@
 import Button from "@/app/UI/Button";
+import { IMAGE_END } from "@/config";
 import Flex from "@/utitly-css/Flex";
 import Wrapper from "@/utitly-css/Wrapper";
 import Image from "next/image";
@@ -22,29 +23,32 @@ type aboutDataProps = {
 };
 
 const About = ({ aboutData }: aboutDataProps) => {
+  console.log(aboutData, "aboutData");
+  console.log(`${IMAGE_END}${aboutData.aboutImage.url}`,"hhh")
   return (
     <>
       <Wrapper className="bg-background">
         <Flex>
           <div className="w-[80%]">
             <Flex direction="col">
-              <p>{aboutData?.sectionLabel}</p>
+              <p>{aboutData?.titleText}</p>
               <h4>
-                {aboutData?.title} <br /> {aboutData?.subtitle}
+                {aboutData?.descriptionText} <br /> {aboutData?.descriptionText}
               </h4>
             </Flex>
             <Flex className="mt-4">
               <Image
-                src={aboutData?.logo.src}
-                alt={aboutData?.logo.alt}
+                src={  aboutData?.aboutImage?.url
+                  ? `${IMAGE_END}${aboutData.aboutImage.url}`
+                  : '/placeholder.png'}
+                alt={"Image faliure"}
                 width={400}
                 height={400}
               />
               <Flex width="half" direction="col" gap="6">
-                <h6>{aboutData?.content?.heading}</h6>
-                <p>{aboutData?.content?.description}</p>
+                <h6>{aboutData?.aboutDescription}</h6>
 
-                <Button text={aboutData?.content.buttonText} />
+                <Button text={aboutData?.buttonText} />
               </Flex>
             </Flex>
           </div>
@@ -54,10 +58,7 @@ const About = ({ aboutData }: aboutDataProps) => {
         <Flex className="py-6" gap="10" align="center">
           {[1, 2, 3, 4].map((_, index) => {
             return (
-              <div
-                key={index}
-                className="card"
-              >
+              <div key={index} className="card">
                 <h6>400+</h6>
                 <p>Projects Completed</p>
               </div>
