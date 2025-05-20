@@ -1,14 +1,15 @@
 import { getMethod } from "@/app/utils-api/getMethod";
 import Header from "@/components/Header";
+import Subheader from "@/components/Subheader";
 
 export default async function SubFooterSection() {
   const data = await getMethod({
-    url: "header-websites?populate[headerData][populate]=*",
+    url: "subheaders?populate[subheader][populate]=*",
     options: {
-      cache: "force-cache", 
+    
     },
   });
 
 
-  return <Header headerData={data.data[0].headerData} />;
+  return <Subheader headerData={data.data[0].subheader} />;
 }

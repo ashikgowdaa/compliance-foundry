@@ -29,14 +29,13 @@ export default async function RootLayout({
 
   footer: React.ReactNode;
 }>) {
-  // const res = await fetch("https://your-api.com/announcement-status");
-  // const data = await res.json();
-  const showAnnouncement = true;
+
+  
   return (
     <html lang="en">
       <body>
+         <AnnouncementSection />
         <HeaderSection />
-        {showAnnouncement && <AnnouncementSection />}
         {children}
         <FooterSection />
       </body>

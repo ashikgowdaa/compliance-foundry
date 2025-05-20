@@ -12,7 +12,10 @@ type BannerProps = {
 };
 
 const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
-
+  const imageUrl =
+  Array.isArray(bannerData?.BannerImage_Video) && bannerData.BannerImage_Video.length > 0
+    ? `${API}${bannerData.BannerImage_Video[0].url}`
+    : "";
 
   return (
     <Flex
@@ -20,7 +23,9 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
       direction="col"
       justify="start"
       className="banner relative text-white"
-      style={{ backgroundImage: `url('${API}${bannerData?.BannerImage_Video[0]?.url ? bannerData?.BannerImage_Video[0]?.url : ""}')` }}
+      style={imageUrl ? { backgroundImage: `url('${imageUrl}')` } : {}}
+
+
     >
       <div className="relative z-10 text-center space-y-4 px-4">
         <h1 className="bannerHeader">

@@ -23,8 +23,6 @@ type aboutDataProps = {
 };
 
 const About = ({ aboutData }: aboutDataProps) => {
-  console.log(aboutData, "aboutData");
-  console.log(`${IMAGE_END}${aboutData.aboutImage.url}`,"hhh")
   return (
     <>
       <Wrapper className="bg-background">

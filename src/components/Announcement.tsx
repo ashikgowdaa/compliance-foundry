@@ -23,14 +23,18 @@ const Announcement = ({ announcementData }: AnnouncementProps) => {
     if (!announcementData.showAnnouncement) return null;
   
     return (
-      <Wrapper className="bg-background overflow-hidden">
-        <div
-          ref={trackRef}
-          className="inline-block whitespace-nowrap animate-pause-marquee"
-        >
-          <span className="mr-8">📢 {announcementData.announcementText}</span>
-        </div>
-      </Wrapper>
+<Wrapper className="bg-background overflow-hidden">
+  <div className="relative w-full">
+    <div
+      ref={trackRef}
+      className="flex whitespace-nowrap animate-marquee"
+    >
+      <span className="mr-8">📢 {announcementData.announcementText}</span>
+      <span className="mr-8">📢 {announcementData.announcementText}</span>
+    </div>
+  </div>
+</Wrapper>
+
     );
   };
   
