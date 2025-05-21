@@ -14,7 +14,7 @@ type BannerProps = {
 const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
   const imageUrl =
   Array.isArray(bannerData?.BannerImage_Video) && bannerData.BannerImage_Video.length > 0
-    ? `${API}${bannerData.BannerImage_Video[0].url}`
+    ? `${bannerData.BannerImage_Video[0].url}`
     : "";
 
   return (
