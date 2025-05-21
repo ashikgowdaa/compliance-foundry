@@ -60,7 +60,7 @@ const sections = [
 ];
 
 export default function Accordion() {
-  const [openId, setOpenId] = useState(2); // default open section
+  const [openId, setOpenId] = useState<number | null>(2); // default open section
 
   return (
     <div className="bg-[#111] text-white px-6 py-8 space-y-6">

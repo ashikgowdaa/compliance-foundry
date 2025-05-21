@@ -7,18 +7,16 @@ import React from "react";
 
 type aboutDataProps = {
   aboutData: {
-    sectionLabel: string;
-    title: string;
-    subtitle: string;
-    logo: {
-      src: string;
+    titleText: string;
+    descriptionText: string;
+    aboutImage: {
+      url: string;
       alt: string;
     };
-    content: {
-      heading: string;
-      description: string;
-      buttonText: string;
-    };
+    aboutDescription: string;
+    buttonText: string;
+
+
   };
 };
 

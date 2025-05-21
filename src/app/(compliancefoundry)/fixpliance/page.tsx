@@ -1,5 +1,5 @@
 import React from "react";
-import BannerSection from "../(home)/banner/page";
+import BannerSection from "../(home)/banner/BannerSection";
 import AboutUs from "../(home)/aboutus/page";
 import ServicesSection from "../(home)/services/page";
 import PortfolioPage from "../(home)/portfolio/page";
@@ -9,8 +9,7 @@ import SubHeaderSection from "../(common)/sub-header/page";
 import SubFooterSection from "../(common)/sub-header/page";
 import { StaticWebsiteKeys } from "@/config";
 
-export const Fixpliance = () => {
-
+export default function Fixpliance() {
   return (
     <>
       <SubHeaderSection />
@@ -20,9 +19,7 @@ export const Fixpliance = () => {
       <PortfolioPage />
       <TestimonialSection />
       <ContactSection />
-      <SubFooterSection/>
+      <SubFooterSection />
     </>
   );
-};
-
-export default Fixpliance;
+}
