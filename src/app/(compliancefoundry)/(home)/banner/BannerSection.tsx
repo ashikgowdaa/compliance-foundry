@@ -11,6 +11,8 @@ export default async function BannerSection({
 }) {
   const   {data}  = await getMethod({ url: "banners?populate=*" });
 
+  console.log(data,"bannerData")
+
   if (  !data?.length) return <ErrorComponent errorText="Error Fetching Banner Data"/>
 
   const filteredData = filterData(data, websiteSection);
