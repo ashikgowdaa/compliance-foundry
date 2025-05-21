@@ -9,8 +9,11 @@ export default async function HeaderSection() {
     },
   });
 
+  const header = data?.data?.[0]?.headerData;
 
+  if (!header) {
+    return <div>Header data not found</div>; // Or render nothing / fallback component
+  }
 
-
-  return <Header headerData={data.data[0].headerData} />;
+  return <Header headerData={header} />;
 }

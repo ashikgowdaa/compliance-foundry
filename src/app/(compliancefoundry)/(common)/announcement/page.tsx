@@ -8,7 +8,7 @@ const AnnouncementSection = async () => {
 
   const announcementData =
     data?.data?.length > 0
-      ? data.data[0]
+      ? data?.data[0]
       : { showAnnouncement: false, announcementText: "" };
 
   return <Announcement announcementData={announcementData} />;

@@ -10,6 +10,7 @@ export default async function SubFooterSection() {
     },
   });
 
+  const subheaderData = data?.data?.[0]?.subheader ?? {};
 
-  return <Subheader headerData={data.data[0].subheader} />;
+  return <Subheader headerData={subheaderData} />;
 }
