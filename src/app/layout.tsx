@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { FathomAnalytics } from "./fathom";
 
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        
+      <FathomAnalytics />
         {children}</body>
     </html>
   );
