@@ -14,8 +14,8 @@ const ComplianceFoundry = () => {
     <>
       <BannerSection websiteSection={StaticWebsiteKeys.CF} />
       <AboutUs />
-      <ServicesSection />
-      <PortfolioPage />
+      <ServicesSection websiteSection={StaticWebsiteKeys.CF} />
+      <PortfolioPage websiteSection={StaticWebsiteKeys.CF} />
       <TestimonialSection />
       <ContactSection />
     </>

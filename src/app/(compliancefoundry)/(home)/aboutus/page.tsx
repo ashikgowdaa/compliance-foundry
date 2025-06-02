@@ -4,7 +4,7 @@ import { API_ENDPOINTS } from "@/config";
 
 export default async function AboutUs() {
   const data = await getMethod({
-    url: API_ENDPOINTS.ABOUT.GET_ABOUT,
+    url: API_ENDPOINTS.about.getAbout,
     options: {
   
     },

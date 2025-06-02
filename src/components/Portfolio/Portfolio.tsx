@@ -3,70 +3,53 @@
 import React from "react";
 import Wrapper from "@/utitly-css/Wrapper";
 import Flex from "@/utitly-css/Flex";
-import SwiperCarousel from "../custom-components/Slider";
-import  SlideContent from "./SlideContent";
+import * as LucideIcons from "lucide-react";
 
-const data = [
-  {
-    id: 1,
-    title: "Dave Financial CRM",
-    desc: "Lorem ipsum dolor sit amet consectetur. Eu lobortis aliquet nec dui blandit faucibus proin vitae adipiscing.",
-    img: "/laptop-dave.png",
-    tech: [
-      "html5-plain",
-      "css3-plain",
-      "react-original",
-      "wordpress-plain",
-      "aws-plain",
-    ],
-  },
-  {
-    id: 2,
-    title: "Dave  CRM",
-    desc: "Lorem ipsum dolor sit amet consectetur. Eu lobortis aliquet nec dui blandit faucibus proin vitae adipiscing.",
-    img: "/laptop-dave.png",
-    tech: [
-      "html5-plain",
-      "css3-plain",
-      "react-original",
-      "wordpress-plain",
-      "aws-plain",
-    ],
-  },
-  {
-    id: 2,
-    title: " Financial CRM",
-    desc: "Lorem ipsum dolor sit amet consectetur. Eu lobortis aliquet nec dui blandit faucibus proin vitae adipiscing.",
-    img: "/laptop-dave.png",
-    tech: [
-      "html5-plain",
-      "css3-plain",
-      "react-original",
-      "wordpress-plain",
-      "aws-plain",
-    ],
-  },
-  // add more case‑studies here...
-];
+type resourceCard = {
+  icon: keyof typeof LucideIcons;
+  title: string;
+  description: string;
+}
 
-const Portfolio = () => {
+interface ResourceProps {
+  resourceHeading: string;
+  resourceSubHeading: string;
+  resourceCard: resourceCard[];
+}
+
+const Portfolio = ({ data }: { data: ResourceProps }) => {
   return (
     <Wrapper className="bg-primary">
       <Flex>
-        <div className="w-[80%]">
-          <Flex direction="col">
-            <p>aboutData?.sectionLabel</p>
-            <h4>
-              aboutData?.title <br /> aboutData?.subtitle
+        <Flex className="w-[90%]" direction="col" gap="12">
+          <Flex direction="col" width="half">
+            <p className="text-text-blue">{data.resourceHeading}</p>
+            <h4 className="text-text-primary text-3xl">
+              {data.resourceSubHeading}
             </h4>
           </Flex>
-
-          <SwiperCarousel
-            data={data}
-            SlideComponent={SlideContent}
-            gap={40} // optional
-          />
-        </div>
+          <Flex wrap={true} gap="12" justify="center">
+            {data?.resourceCard.map((item, index) => {
+              const Icon = LucideIcons[item.icon] as React.ComponentType<{
+                color?: string;
+                size?: number;
+                className?: string;
+              }>;
+              
+              return (
+                <Flex key={index} className="w-[30%]" direction="col" gap="4" align="start" justify="start">
+                  {Icon && <Icon color="blue" size={30} />}
+                  <div className="text-text-primary text-xl w-1/2 font-semibold">
+                    {item.title}
+                  </div>
+                  <div className="text-text-tertiary text-sm w-[95%] font-semibold">
+                    {item.description}
+                  </div>
+                </Flex>
+              );
+            })}
+          </Flex>
+        </Flex>
       </Flex>
     </Wrapper>
   );

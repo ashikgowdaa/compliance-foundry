@@ -10,7 +10,13 @@ export const StaticWebsiteKeys = {
   
 
   export const API_ENDPOINTS = {
-    ABOUT : {
-      GET_ABOUT : "about-uses?populate=*"
+    about : {
+      getAbout : "about-uses?populate=*"
+    },
+    services:{
+      getServices:"services?populate[accordionSection][populate]=accordionImage&populate=WebsiteDomain"
+    },
+    resources:{
+      getResources:"resources?populate=*"
     }
   }

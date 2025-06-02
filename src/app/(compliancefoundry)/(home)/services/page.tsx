@@ -1,13 +1,18 @@
+import ErrorComponent from "@/app/UI/ErrorComponent";
+import { getMethod } from "@/app/utils-api/getMethod";
 import Services from "@/components/Services";
+import { API_ENDPOINTS } from "@/config";
+import { filterData } from "@/lib/utils/utils-filterData";
 
-export default async function ServicesSection() {
-//   const data = await getMethod({
-//     url: "header-websites?populate[headerData][populate]=*",
-//     options: {
-//       cache: "force-cache", 
-//     },
-//   });
+export default async function ServicesSection({
+  websiteSection,
+}: {
+  websiteSection: string;
+}) {
+  const data = await getMethod({ url: API_ENDPOINTS.services.getServices });
 
+  if (!data?.data || data?.data[0]?.WebsiteDomain.webSiteKeys !== websiteSection)
+    return <ErrorComponent errorText="Error Fetching Services Data " />;
 
-  return <Services />;
+  return <Services services={data.data[0]} />;
 }

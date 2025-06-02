@@ -11,7 +11,6 @@ export default async function BannerSection({
 }) {
   const   {data}  = await getMethod({ url: "banners?populate[ClientLogo][populate]=*&populate[BannerImage_Video][populate]=*" });
 
-  console.log(data,"bannerData")
 
   if (  !data?.length) return <ErrorComponent errorText="Error Fetching Banner Data"/>
 

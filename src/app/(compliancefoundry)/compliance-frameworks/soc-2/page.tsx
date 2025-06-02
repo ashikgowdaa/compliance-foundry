@@ -16,8 +16,8 @@ const RapidSoc2 = () => {
 
       <BannerSection websiteSection={StaticWebsiteKeys.RP} />
       <AboutUs />
-      <ServicesSection />
-      <PortfolioPage />
+      <ServicesSection  websiteSection={StaticWebsiteKeys.RP}/>
+      <PortfolioPage websiteSection={StaticWebsiteKeys.RP} />
       <TestimonialSection />
       <ContactSection />
    </>
