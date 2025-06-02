@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import Flex from "@/utitly-css/Flex";
 import Wrapper from "@/utitly-css/Wrapper";
 import Link from "next/link";
+import Button from "./custom-components/Button";
 
 
 type Subtype = {
@@ -38,24 +39,24 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
   };
 
   return (
-    <Wrapper className="bg-primary">
-      <Flex justify="around" className="py-3">
+    <Wrapper className="text-text-primary" style={{ background:"var(--color-background-greyWhite)" }}>
+      <Flex justify="around" className="py-4 px-8">
         {/* logo & title */}
         <Flex justify="start" className="w-1/4">
-          <h1 className="font-bold">Compliance Foundry</h1>
+          <h1 className="font-bold text-xl">Compliance <br/> Foundry</h1>
         </Flex>
 
         {/* nav */}
-        <Flex justify="between" gap="4">
+        <Flex justify="center" gap="8">
           {Array.isArray(headerData) &&
             headerData.map(item => (
               <span
                 key={item.id}
-                className="relative inline-block cursor-pointer"
+                className="relative inline-block cursor-pointer font-semibold text-gray-600 text-lg"
                 onMouseEnter={() => handleEnter(item.id)}
                 onMouseLeave={handleLeave}
               >
-                <Link href={item.routes ?? '/'}>{item.title}</Link>
+                <Link href={item.routes ?? '/'} >{item.title}</Link>
 
                 {/* render only while openId matches */}
                 {openId === item.id && (item.Subtype ?? []).length > 0 && (
@@ -85,9 +86,7 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
 
         {/* CTA */}
         <Flex justify="center" className="w-1/4">
-          <span className="border-amber-50 border-2 p-2 rounded-md">
-            Get in Touch
-          </span>
+          <Button title="Contact Us" variant="primary"/>
         </Flex>
       </Flex>
     </Wrapper>

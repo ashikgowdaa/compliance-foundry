@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ChevronUp,  } from "lucide-react";
-<ChevronUp />
+import { ArrowDown, ArrowUp } from "lucide-react";
+import dummyImage from "../../../public/images/about.jpg";
 
 const sections = [
   {
@@ -61,37 +61,62 @@ const sections = [
 
 export default function Accordion() {
   const [openId, setOpenId] = useState<number | null>(2); // default open section
-
   return (
-    <div className="bg-[#111] text-white px-6 py-8 space-y-6">
+    <div className=" w-full  px-6 py-8 space-y-6 rounded-md">
       {sections.map(({ id, title, content }) => {
         const open = id === openId;
         return (
           <div key={id} className="border-b border-white/10 pb-6">
             <button
-              className="w-full flex items-center justify-between"
+              className="w-full flex items-center justify-between gap-4"
               onClick={() => setOpenId(open ? null : id)}
             >
-              <div className="flex items-baseline gap-4">
-                <span className="text-lg font-medium w-6">
+              <div className="flex items-baseline gap-16">
+                <span
+                  className={`text-2xl  w-6  ${
+                    open ? "text-text-blue" : "text-text-primary"
+                  } `}
+                >
                   {id.toString().padStart(2, "0")}
                 </span>
                 <span
                   className={`uppercase ${
-                    open ? "text-white" : "text-gray-400"
-                  } tracking-wider`}
+                    open ? "text-text-blue" : "text-text-primary"
+                  } tracking-wider  text-2xl`}
                 >
                   {title}
                 </span>
               </div>
 
-              {/* icon changes */}
-              {open ?<ChevronUp /> : <ChevronDown />}
+              {open ? (
+                <span className="w-12 h-12 rounded-full border border-gray-600 flex justify-center items-center">
+                  {" "}
+                  <ArrowDown color="#000" />{" "}
+                </span>
+              ) : (
+                <span className="w-12 h-12 rounded-full border border-gray-600 flex justify-center items-center">
+                  <ArrowUp color="#000" />
+                </span>
+              )}
             </button>
+            {open && (
+              <div className="py-4 pt-6 animate-fadeIn flex justify-between gap-12">
+                <p className="text-sm  max-w-xl  w-full text-text-tertiary">
+                  Lorem ipsum dolor sit amet consectetur. Eu amet posuere
+                  consequat donce suspendisse lorem enim. Elit viverra nisl non
+                  nisi eleifend. Cursus erat mattis fames et mollis risus at.
+                  Lorem ipsum dolor sit amet consectetur. Eu amet posuere
+                  consequat donce suspendisse lorem enim. Elit viverra nisl non
+                  nisi eleifend. Cursus erat mattis fames et mollis risus at.
+                </p>
 
-            {/* panel */}
-            {open && content && (
-              <div className="pl-10 pt-6 animate-fadeIn">{content}</div>
+                <div className="w-full">
+                  <img
+                    src={dummyImage ?? ""}
+                    className="h-full w-full object-cover group-hover:scale-105 transition"
+                  />
+                </div>
+              </div>
             )}
           </div>
         );
@@ -99,4 +124,3 @@ export default function Accordion() {
     </div>
   );
 }
-

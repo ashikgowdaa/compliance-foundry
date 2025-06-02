@@ -2,13 +2,13 @@ import React from 'react'
 
 type Wrapper = {
     children: React.ReactNode,
-    className?:string
+    className?: string,
+    style?: React.CSSProperties;
 }
 
-
-const Wrapper = ({children, className}:Wrapper) => {
+const Wrapper = ({children, className , style}:Wrapper) => {
   return (
-    <div className={` text-secondary px-2 py-2 ${className}`}>{children}</div>
+    <div className={` text-secondary px-2 py-2 ${className}`} style={style}>{children}</div>
   )
 }
 

@@ -9,7 +9,7 @@ export default async function BannerSection({
 }: {
   websiteSection: string;
 }) {
-  const   {data}  = await getMethod({ url: "banners?populate=*" });
+  const   {data}  = await getMethod({ url: "banners?populate[ClientLogo][populate]=*&populate[BannerImage_Video][populate]=*" });
 
   console.log(data,"bannerData")
 

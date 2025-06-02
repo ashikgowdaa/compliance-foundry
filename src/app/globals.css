@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
 
+
 body {
   color: var(--text-primary);
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --background-secondary: #171717;
-  --text-primary: #ffff;
-  --text-secondary: #000;
+  --background-linear-blue: linear-gradient(to right, #2D69FF, #2A4EAA, #4C73D4, #1E58E9);
+  --background-greyWhite: #F3F4FA;
+  --background-white: #fff;
+  --background-blue: #2D69FF; 
+  --foreground: #fff;
+  --background-secondary: #fff;
+  --text-primary: #000;
+  --text-secondary: #fff;
+  --text-tertiary: #000000a7;
+  --text-blue: #2D69FF;
 }
 
+
 @theme {
-  --color-primary: #000;
-  --color-background:#171717;
+  --color-primary: #fff;
+  --color-background-linear-blue: var( --background-linear-blue );
+  --color-background-greyWhite:var(--background-greyWhite);
+  --color-background-white:var(--color-background-white);
+  --color-background-blue: #2D69FF;
   --color-secondary: #fff;
-  --color-text-primary: #fff;
-  --color-text-secondary: #000;
-  
+  --color-text-primary: #000;
+  --color-text-secondary: #fff;
+  --color-text-tertiary: #000000a7;
+  --color-text-blue: #2D69FF;
 }
 
 @layer utilities {
@@ -44,7 +55,18 @@ body {
     animation: marquee 15s linear infinite;
   }
   
-
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .scroll-left {
+    animation: scroll-left 20s linear infinite;
+  }
   
 }
 
@@ -52,12 +74,13 @@ body {
 
   /* HEADER TEXT */
   .bannerHeader {
-    @apply text-6xl font-extralight text-center z-2
+    @apply text-6xl font-semibold text-start z-2  w-1/2 leading-tight
   }
 
   /* SUB HEADER TEXT */
   .bannerSubHeader {
-    @apply text-xl font-light text-center z-2
+    @apply text-2xl font-light text-start z-2 w-2/3 leading-snug
+
   }
 
   .footer-category-header {
@@ -78,14 +101,9 @@ body {
 
 @layer components {
   .banner {
-    @apply relative h-[85vh] w-full bg-cover bg-center text-white flex items-center justify-start py-4
+    @apply relative h-[85vh] w-full bg-cover bg-top text-white flex items-center justify-start py-4
   }
 
-  .banner::before {
-    content: "";
-    @apply absolute inset-0 bg-black opacity-80;
-    z-index: 1;
-  }
   .button {
     @apply px-6 py-2 bg-transparent border-2 border-secondary text-secondary cursor-pointer
   }

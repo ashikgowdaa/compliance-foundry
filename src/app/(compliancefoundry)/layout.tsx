@@ -3,6 +3,8 @@ import React from "react";
 import HeaderSection from "./(common)/header/page";
 import FooterSection from "./(common)/footer/page";
 import AnnouncementSection from "./(common)/announcement/page";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const metadata: Metadata = {
   title: "Compliance Foundry Website",
