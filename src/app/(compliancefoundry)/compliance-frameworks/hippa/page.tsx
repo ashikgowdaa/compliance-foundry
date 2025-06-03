@@ -1,8 +1,8 @@
 import React from "react";
 import BannerSection from "../../(home)/banner/BannerSection";
 import AboutUs from "../../(home)/aboutus/page";
-import ServicesSection from "../../(home)/services/page";
-import PortfolioPage from "../../(home)/portfolio/page";
+import ServicesSection from "../../(home)/services/Services";
+import PortfolioPage from "../../(home)/resource/ResourceSection";
 import TestimonialSection from "../../(home)/testimonials/page";
 import ContactSection from "../../(home)/contactus/page";
 import { StaticWebsiteKeys } from "@/config";
@@ -14,8 +14,8 @@ const Hippa = () => {
     <>
       <BannerSection websiteSection={StaticWebsiteKeys.HIP} />
       <AboutUs />
-      <ServicesSection />
-      <PortfolioPage />
+      <ServicesSection websiteSection={StaticWebsiteKeys.HIP} />
+      <PortfolioPage websiteSection={StaticWebsiteKeys.HIP}/>
       <TestimonialSection />
       <ContactSection />
     </>

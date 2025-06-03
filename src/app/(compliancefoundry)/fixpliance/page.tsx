@@ -1,8 +1,8 @@
 import React from "react";
 import BannerSection from "../(home)/banner/BannerSection";
 import AboutUs from "../(home)/aboutus/page";
-import ServicesSection from "../(home)/services/page";
-import PortfolioPage from "../(home)/portfolio/page";
+import ServicesSection from "../(home)/services/Services";
+import PortfolioPage from "../(home)/resource/ResourceSection";
 import TestimonialSection from "../(home)/testimonials/page";
 import ContactSection from "../(home)/contactus/page";
 import SubHeaderSection from "../(common)/sub-header/page";
@@ -15,8 +15,8 @@ export default function Fixpliance() {
       <SubHeaderSection />
       <BannerSection websiteSection={StaticWebsiteKeys.FAI} />
       <AboutUs />
-      <ServicesSection />
-      <PortfolioPage />
+      <ServicesSection  websiteSection={StaticWebsiteKeys.FAI}/>
+      <PortfolioPage  websiteSection={StaticWebsiteKeys.FAI} />
       <TestimonialSection />
       <ContactSection />
       <SubFooterSection />

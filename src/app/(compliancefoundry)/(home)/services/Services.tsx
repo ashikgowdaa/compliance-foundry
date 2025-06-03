@@ -2,7 +2,6 @@ import ErrorComponent from "@/app/UI/ErrorComponent";
 import { getMethod } from "@/app/utils-api/getMethod";
 import Services from "@/components/Services";
 import { API_ENDPOINTS } from "@/config";
-import { filterData } from "@/lib/utils/utils-filterData";
 
 export default async function ServicesSection({
   websiteSection,
