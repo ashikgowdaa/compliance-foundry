@@ -10,7 +10,7 @@ export default async function ResourceSection({
 }) {
   const data = await getMethod({ url: API_ENDPOINTS.resources.getResources});
 
-  if (!data?.data || data?.data[0]?.WebsiteDomain?.webSiteKeys !== websiteSection)
+  if (!data || !data?.data || data?.data[0]?.WebsiteDomain?.webSiteKeys !== websiteSection)
     return <ErrorComponent errorText="Error Fetching Services Data " />;
 
   return <Portfolio data={data?.data[0]} />;

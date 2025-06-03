@@ -28,7 +28,7 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
   const imageUrl =
     Array.isArray(bannerData?.BannerImage_Video) &&
     bannerData.BannerImage_Video.length > 0
-      ? `${IMAGE_END}${bannerData.BannerImage_Video[0].url}`
+      ? `${bannerData.BannerImage_Video[0].url}`
       : "";
 
   return (

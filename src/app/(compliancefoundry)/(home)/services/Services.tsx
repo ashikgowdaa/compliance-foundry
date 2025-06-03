@@ -9,8 +9,7 @@ export default async function ServicesSection({
   websiteSection: string;
 }) {
   const data = await getMethod({ url: API_ENDPOINTS.services.getServices });
-
-  if (!data?.data || data?.data[0]?.WebsiteDomain.webSiteKeys !== websiteSection)
+  if (!data || !data?.data || data?.data[0]?.WebsiteDomain?.webSiteKeys !== websiteSection)
     return <ErrorComponent errorText="Error Fetching Services Data " />;
 
   return <Services services={data.data[0]} />;

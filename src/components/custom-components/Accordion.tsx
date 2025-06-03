@@ -52,7 +52,6 @@ export default function Accordion({ accordionData }: AccordionProps) {
                     open ? "text-text-blue" : "text-text-primary"
                   }`}
                 >
-                  {/* Safely convert string to number for padding */}
                   {parseInt(accordionId).toString().padStart(2, "0")}
                 </span>
                 <span
@@ -83,7 +82,7 @@ export default function Accordion({ accordionData }: AccordionProps) {
 
                 <div className="w-full flex justify-center">
                   <img
-                    src={`http://localhost:1337${accordionImage.url}`}
+                    src={`${accordionImage.url}`}
                     alt={accordionImage.alt || accordionTitle}
                     className="h-full w-[70%] object-cover group-hover:scale-105 transition rounded-md"
                   />

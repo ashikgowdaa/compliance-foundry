@@ -17,7 +17,7 @@ const InfiniteBrandScroller = ({ brands }: { brands: Brand[] }) => {
             {[...brands, ...brands, ...brands, ...brands].map((src, index) => (
               <img
                 key={index}
-                src={`${IMAGE_END}${src.ClientLogo.url}`}
+                src={`${src.ClientLogo.url}`}
                 alt={`Brand ${index + 1}`}
                 className="w-100% h-100% object-contain"
               />

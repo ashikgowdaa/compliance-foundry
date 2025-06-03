@@ -1,3 +1,4 @@
+import ErrorComponent from "@/app/UI/ErrorComponent";
 import { getMethod } from "@/app/utils-api/getMethod";
 import Header from "@/components/Header";
 
@@ -8,6 +9,7 @@ export default async function HeaderSection() {
       // cache: "force-cache", 
     },
   });
+  if ( !data ||  !data?.data?.length) return <ErrorComponent errorText="Error Fetching Header  Data"/>
 
   const header = data?.data?.[0]?.headerData;
 
