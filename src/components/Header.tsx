@@ -40,13 +40,11 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
 
   return (
     <Wrapper className="text-text-primary" style={{ background:"var(--color-background-greyWhite)" }}>
-      <Flex justify="around" className="py-4 px-8">
-        {/* logo & title */}
+      <Flex justify="around" className=" px-8">
         <Flex justify="start" className="w-1/4">
           <h1 className="font-bold text-xl">Compliance <br/> Foundry</h1>
         </Flex>
 
-        {/* nav */}
         <Flex justify="center" gap="8">
           {Array.isArray(headerData) &&
             headerData.map(item => (
@@ -58,7 +56,6 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
               >
                 <Link href={item.routes ?? '/'} >{item.title}</Link>
 
-                {/* render only while openId matches */}
                 {openId === item.id && (item.Subtype ?? []).length > 0 && (
                   <div
                     className="

@@ -23,7 +23,7 @@ const Announcement = ({ announcementData }: AnnouncementProps) => {
   if (!announcementData.showAnnouncement) return null;
 
   return (
-    <Wrapper  className="overflow-hidden text-text-secondary"  style={{ background:"var(--color-background-linear-blue)" }}>
+    <Wrapper  className="overflow-hidden text-text-secondary !py-2" style={{ background:"var(--color-background-linear-blue)" }}>
       <div className="relative w-full">
         <div ref={trackRef} className=" text-center">
           <span className="mr-8">📢 {announcementData.announcementText}</span>

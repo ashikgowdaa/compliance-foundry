@@ -3,6 +3,7 @@
 import React from "react";
 import Wrapper from "@/utitly-css/Wrapper";
 import Flex from "@/utitly-css/Flex";
+import { LibraryBig } from 'lucide-react';
 import * as LucideIcons from "lucide-react";
 
 type resourceCard = {
@@ -23,12 +24,12 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
       <Flex>
         <Flex className="w-[90%]" direction="col" gap="12">
           <Flex direction="col" width="half">
-            <p className="text-text-blue">{data.resourceHeading}</p>
-            <h4 className="text-text-primary text-3xl">
+            <Flex className="text-text-blue uppercase font-semibold">  <LibraryBig /> {data.resourceHeading}</Flex>
+            <span className="text-text-primary text-3xl text-medium text-center font-semibold text-shadow-md">
               {data.resourceSubHeading}
-            </h4>
+            </span>
           </Flex>
-          <Flex wrap={true} gap="12" justify="center">
+          <Flex wrap={true} gap="12" justify="center" >
             {data?.resourceCard.map((item, index) => {
               const Icon = LucideIcons[item.icon] as React.ComponentType<{
                 color?: string;

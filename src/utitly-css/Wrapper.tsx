@@ -8,7 +8,7 @@ type Wrapper = {
 
 const Wrapper = ({children, className , style}:Wrapper) => {
   return (
-    <div className={` text-secondary px-2 py-2 ${className}`} style={style}>{children}</div>
+    <div className={` text-secondary px-2 py-6 ${className}`} style={style}>{children}</div>
   )
 }
 

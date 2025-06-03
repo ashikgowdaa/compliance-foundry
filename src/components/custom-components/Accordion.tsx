@@ -48,14 +48,14 @@ export default function Accordion({ accordionData }: AccordionProps) {
             >
               <div className="flex items-baseline gap-16">
                 <span
-                  className={`text-2xl w-6 ${
+                  className={`text-2xl w-6 font-semibold text-shadow-md ${
                     open ? "text-text-blue" : "text-text-primary"
                   }`}
                 >
                   {parseInt(accordionId).toString().padStart(2, "0")}
                 </span>
                 <span
-                  className={`uppercase ${
+                  className={`uppercase font-semibold text-shadow-md ${
                     open ? "text-text-blue" : "text-text-primary"
                   } tracking-wider text-2xl`}
                 >
@@ -75,16 +75,16 @@ export default function Accordion({ accordionData }: AccordionProps) {
             </button>
             
             {open && (
-              <div className="py-4 pt-6 animate-fadeIn flex justify-between gap-12 items-center">
-                <p className="text-md max-w-xl w-full text-text-tertiary">
+              <div className="py-4 pt-6 animate-fadeIn flex justify-between gap-12 items-start">
+                <p className="text-md max-w-xl w-full text-text-tertiary text-justify">
                   {accordionContentDescription}
                 </p>
 
-                <div className="w-full flex justify-center">
+                <div className="w-full flex justify-center h-[250px] rounded-md">
                   <img
                     src={`${accordionImage.url}`}
                     alt={accordionImage.alt || accordionTitle}
-                    className="h-full w-[70%] object-cover group-hover:scale-105 transition rounded-md"
+                    className="h-full w-full object-contain group-hover:scale-105 transition rounded-2xl "
                   />
                 </div>
               </div>

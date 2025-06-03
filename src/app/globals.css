@@ -74,12 +74,12 @@ body {
 
   /* HEADER TEXT */
   .bannerHeader {
-    @apply text-6xl font-semibold text-start z-2  w-1/2 leading-tight
+    @apply text-xl md:text-2xl lg:text-5xl  2xl:text-6xl font-semibold text-start z-2  w-1/2 leading-tight text-shadow-lg/20
   }
 
   /* SUB HEADER TEXT */
   .bannerSubHeader {
-    @apply text-2xl font-light text-start z-2 w-2/3 leading-snug
+    @apply md:text-xl lg:text-xl 2xl:text-2xl font-light text-start z-2 w-2/3 leading-snug text-shadow-white text-gray-300
 
   }
 
@@ -101,7 +101,7 @@ body {
 
 @layer components {
   .banner {
-    @apply relative h-[85vh] w-full bg-cover bg-top text-white flex items-center justify-start py-4
+    @apply !relative h-[85vh] w-full bg-cover bg-top text-white flex items-center justify-start
   }
 
   .button {

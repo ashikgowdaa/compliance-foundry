@@ -37,25 +37,28 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
         align="center"
         direction="col"
         justify="end"
-        className="banner relative text-white "
+        className="banner !relative text-white"
         style={imageUrl ? { backgroundImage: `url('${imageUrl}')` } : {}}
       >
-        <Flex justify="between" className="w-[90%] pb-8">
-          <span className="bannerHeader">
+        <Flex justify="between" className="w-[90%] pb-14" gap="12">
+          <Flex >
+          <div className="bannerHeader w-full ">
             {bannerData?.MainText.split("\n").map((line, i) => (
               <React.Fragment key={i}>
                 {line}
                 <br />
               </React.Fragment>
             ))}
-          </span>
-          <Flex className="w-1/2" justify="end">
-            <span className="bannerSubHeader">{bannerData?.SubText}</span>
+          </div>
+          </Flex>
+          <Flex className="w-full" justify="end">
+            <span className="bannerSubHeader w-full  max-w-[80%]">{bannerData?.SubText}</span>
           </Flex>
         </Flex>
       </Flex>
-      <Flex direction="col" gap="2" className="bg-background-greyWhite border-b-2 border-b-gray-300 py-2">
-        <h1 className="text-gray-600 font-semibold">{bannerData?.brandHeadingText}</h1>
+      <div className="absolute bg-gradient-to-t from-text-tertiary to-transparent top-[5.5%] h-full w-full"></div>
+      <Flex direction="col" gap="2" className="bg-background-greyWhite border-b-1 border-b-gray-300 py-6">
+        <h1 className="text-text-tertiary font-semibold text-shadow-lg/5 text-sm">{bannerData?.brandHeadingText}</h1>
         <Flex justify="around">
           {
             bannerData?.ClientLogo && (
