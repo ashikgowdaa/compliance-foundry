@@ -39,12 +39,11 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
   };
 
   return (
-    <Wrapper className="text-text-primary" style={{ background:"var(--color-background-greyWhite)" }}>
+    <Wrapper className="text-text-primary !py-3"  style={{ background:"var(--color-background-greyWhite)" }}>
       <Flex justify="around" className=" px-8">
         <Flex justify="start" className="w-1/4">
           <h1 className="font-bold text-xl">Compliance <br/> Foundry</h1>
         </Flex>
-
         <Flex justify="center" gap="8">
           {Array.isArray(headerData) &&
             headerData.map(item => (

@@ -1,4 +1,15 @@
-export const IMAGE_END = process.env.IMAGE_END
+export const IMAGE_END = process.env.NEXT_PUBLIC_IMAGE_END;
+const ENVIRONMENT = process.env.NEXT_PUBLIC_ENV;
+
+
+export const imageGenerationUrl = (url:string) =>{
+  if (ENVIRONMENT === "DEV"){
+   return IMAGE_END + url
+  }
+  else{
+    return  url 
+  }
+}
 
 export const StaticWebsiteKeys = {
     CF:  "compliancefoundry",
@@ -26,5 +37,8 @@ export const StaticWebsiteKeys = {
     },
     resources:{
       getResources:"resources?populate=*"
+    },
+    pricing:{
+      getPricing:"pricings?populate=*"
     }
   }

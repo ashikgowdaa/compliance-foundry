@@ -35,7 +35,7 @@ const Button = ({
   }: ButtonProps) => {
     return (
       <button
-        className={`px-6 py-3 font-semibold rounded-3xl ${variantClasses[variant]} ${widthClasses[width]} ${className}`}
+        className={`px-6 py-3 font-semibold rounded-3xl cursor-pointer ${variantClasses[variant]} ${widthClasses[width]} ${className}`}
         style={style}
       >
         {title}

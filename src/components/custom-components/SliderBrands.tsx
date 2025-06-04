@@ -1,5 +1,5 @@
 
-import { IMAGE_END } from '@/config';
+import { IMAGE_END, imageGenerationUrl } from '@/config';
 import React from 'react';
 
 
@@ -18,7 +18,7 @@ const InfiniteBrandScroller = ({ brands }: { brands: Brand[] }) => {
               <div className="w-24">
                 <img
                   key={index}
-                  src={`${src.ClientLogo.url}`}
+                  src={imageGenerationUrl(src.ClientLogo.url)}
                   alt={`Brand ${index + 1}`}
                   className="w-full h-full object-contain"
                 />

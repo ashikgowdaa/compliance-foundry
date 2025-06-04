@@ -5,6 +5,8 @@ import Wrapper from "@/utitly-css/Wrapper";
 import Flex from "@/utitly-css/Flex";
 import { LibraryBig } from 'lucide-react';
 import * as LucideIcons from "lucide-react";
+import AnimatedSection from "../custom-components/Animated";
+import { inView } from "framer-motion";
 
 type resourceCard = {
   icon: keyof typeof LucideIcons;
@@ -23,12 +25,21 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
     <Wrapper className="bg-primary">
       <Flex>
         <Flex className="w-[90%]" direction="col" gap="12">
-          <Flex direction="col" width="half">
-            <Flex className="text-text-blue uppercase font-semibold">  <LibraryBig /> {data.resourceHeading}</Flex>
-            <span className="text-text-primary text-3xl text-medium text-center font-semibold text-shadow-md">
-              {data.resourceSubHeading}
-            </span>
-          </Flex>
+            <AnimatedSection animationVariant="slideRight" duration={0.8} delay={0.8} >
+              {(inView: boolean) => (
+              <Flex direction="col">
+              <Flex direction="col" width="half" >
+                
+                  <Flex className="text-text-blue uppercase font-semibold">  <LibraryBig /> {data.resourceHeading}</Flex>
+                  <span className="text-text-primary text-3xl text-medium text-center font-semibold text-shadow-md">
+                    {data.resourceSubHeading}
+                  </span>
+                </Flex>
+              </Flex>
+              )}
+            </AnimatedSection>
+            <AnimatedSection animationVariant="slideLeft" duration={0.8} delay={0.8} >
+              {(inView) =>      
           <Flex wrap={true} gap="12" justify="center" >
             {data?.resourceCard.map((item, index) => {
               const Icon = LucideIcons[item.icon] as React.ComponentType<{
@@ -50,6 +61,8 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
               );
             })}
           </Flex>
+              }
+            </AnimatedSection>
         </Flex>
       </Flex>
     </Wrapper>
