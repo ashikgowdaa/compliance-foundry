@@ -5,7 +5,7 @@ import BannerSection from "../(home)/banner/BannerSection";
 import AboutUs from "../(home)/aboutus/page";
 import ServicesSection from "../(home)/services/Services";
 import PortfolioPage from "../(home)/resource/ResourceSection";
-import TestimonialSection from "../(home)/testimonials/page";
+import TestimonialSection from "../(home)/testimonials/Testimonilas";
 import ContactSection from "../(home)/contactus/page";
 
 
@@ -17,7 +17,7 @@ const Security = () => {
       <AboutUs />
       <ServicesSection websiteSection={StaticWebsiteKeys.CBS} />
       <PortfolioPage websiteSection={StaticWebsiteKeys.CBS} />
-      <TestimonialSection />
+      <TestimonialSection websiteSection={StaticWebsiteKeys.CBS} />
       <ContactSection />
     </>
   );

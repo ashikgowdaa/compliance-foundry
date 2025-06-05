@@ -4,7 +4,6 @@ import AboutUs from "./(home)/aboutus/page";
 import ServicesSection from "./(home)/services/Services";
 import PortfolioPage from "./(home)/resource/ResourceSection";
 import TestimonialSection from "./(home)/testimonials/Testimonilas";
-import ContactSection from "./(home)/contactus/page";
 import { StaticWebsiteKeys } from "@/config";
 import PricingSection from "./(home)/pricing/Pricing";
 
