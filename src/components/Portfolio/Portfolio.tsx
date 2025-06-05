@@ -30,8 +30,8 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
               <Flex direction="col">
               <Flex direction="col" width="half" >
                 
-                  <Flex className="text-text-blue uppercase font-semibold">  <LibraryBig /> {data.resourceHeading}</Flex>
-                  <span className="text-text-primary text-3xl text-medium text-center font-semibold text-shadow-md">
+                  <Flex className="text-text-blue uppercase font-semibold tertiary-font">  <LibraryBig /> {data.resourceHeading}</Flex>
+                  <span className="text-text-primary text-3xl text-medium text-center font-semibold text-shadow-md secondary-font">
                     {data.resourceSubHeading}
                   </span>
                 </Flex>
@@ -51,7 +51,7 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
               return (
                 <Flex key={index} className="w-[30%]" direction="col" gap="4" align="start" justify="start">
                   {Icon && <Icon color="blue" size={30} />}
-                  <div className="text-text-primary text-xl w-1/2 font-semibold">
+                  <div className="text-text-primary text-xl w-1/2 font-semibold secondary-font">
                     {item.title}
                   </div>
                   <div className="text-text-tertiary text-sm w-[95%] font-semibold">

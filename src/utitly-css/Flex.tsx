@@ -11,6 +11,8 @@ const flexVariants = cva("flex", {
     direction: {
       row: "flex-row",
       col: "flex-col",
+      "col-sm-row": "flex-col sm:flex-row", // Mobile: column, Desktop: row
+      "row-sm-col": "flex-row sm:flex-col", // Mobile: row, Desktop: column
     },
     justify: {
       start: "justify-start",
@@ -19,6 +21,9 @@ const flexVariants = cva("flex", {
       between: "justify-between",
       around: "justify-around",
       evenly: "justify-evenly",
+      "center-sm-between": "justify-center sm:justify-between", // Mobile: center, Desktop: between
+      "start-sm-center": "justify-start sm:justify-center", // Mobile: start, Desktop: center
+      "between-sm-around": "justify-between sm:justify-around", // Mobile: between, Desktop: around
     },
     align: {
       start: "items-start",
@@ -26,6 +31,8 @@ const flexVariants = cva("flex", {
       end: "items-end",
       stretch: "items-stretch",
       baseline: "items-baseline",
+      "center-sm-start": "items-center sm:items-start", // Mobile: center, Desktop: start
+      "start-sm-center": "items-start sm:items-center", // Mobile: start, Desktop: center
     },
     gap: {
       "0": "gap-0",
@@ -37,13 +44,22 @@ const flexVariants = cva("flex", {
       "10": "gap-10",
       "12": "gap-12",
       "16": "gap-16",
+      "2-sm-4": "gap-2 sm:gap-4", // Mobile: gap-2, Desktop: gap-4
+      "4-sm-8": "gap-4 sm:gap-8", // Mobile: gap-4, Desktop: gap-8
     },
     wrap: {
       true: "flex-wrap",
+      "true-sm-false": "flex-wrap sm:flex-nowrap", // Mobile: wrap, Desktop: no-wrap
+    },
+    // New responsive width variants
+    responsiveWidth: {
+      "full-sm-auto": "w-full sm:w-auto", // Mobile: full width, Desktop: auto
+      "auto-sm-full": "w-auto sm:w-full", // Mobile: auto, Desktop: full width
+      "full-sm-half": "w-full sm:w-1/2", // Mobile: full, Desktop: half
     }
   },
   defaultVariants: {
-    width:"full",
+    width: "full",
     direction: "row",
     justify: "center",
     align: "center",
@@ -65,6 +81,7 @@ const Flex = ({
   align,
   wrap,
   gap,
+  responsiveWidth,
   className,
   ...props
 }: FlexProps) => {
@@ -78,6 +95,7 @@ const Flex = ({
           align,
           wrap,
           gap,
+          responsiveWidth,
           className
         })
       )}

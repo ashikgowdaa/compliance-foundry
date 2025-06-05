@@ -3,60 +3,83 @@
 import React from "react";
 import Wrapper from "@/utitly-css/Wrapper";
 import Flex from "@/utitly-css/Flex";
-import SwiperCarousel from "../custom-components/Slider";
-import Cardcontent from "./Cardcontent";
+import { MessageSquareMore } from "lucide-react";
+import AnimatedSection from "../custom-components/Animated";
+import InfiniteTestimonialScroller from "./TestimonialSlider";
 
- const data = [
-    {
-      id: 1,
-      photo: "/images/team/jacob.jpg",
-      name: "Jacob",
-      role: "CEO – IT Solution Company",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Bibendum quis fringilla odio " +
-        "maecenas magna eu ultrices aliquam egestas. Erim phasellus eu commodo " +
-        "nibh vitae amet elit. Ut natoque dui.",
-    },
-    {
-      id: 2,
-      photo: "/images/team/emma.jpg",
-      name: "Emma Clark",
-      role: "Head of Product",
-      text:
-        "Cras mattis nunc vitae nulla imperdiet, a ultrices nibh elementum. " +
-        "Integer tincidunt ex vel nisi elementum, sed placerat sem cursus.",
-    },
-    {
-      id: 3,
-      photo: "/images/team/liam.jpg",
-      name: "Liam Rodriguez",
-      role: "Senior UX Designer",
-      text:
-        "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices " +
-        "posuere cubilia curae; Vivamus dictum dolor vel viverra fermentum.",
-    },
-  ];
+export type testimonialCard = {
+  comment: string;
+  author: string;
+  id: string;
+  authorImage: {
+    url: string;
+    alt: string;
+  };
+};
+interface TestimonialData {
+  testimonialHeading: string;
+  testimonialSubHeading: string;
+  testimonialDescription: string;
+  testimonialCard: testimonialCard[];
+}
 
-const Testimonials = () => {
+const Testimonials = ({
+  testimonialData,
+}: {
+  testimonialData: TestimonialData;
+}) => {
   return (
-    <Wrapper className="bg-background">
-      <Flex>
-        <div className="w-[80%]">
-          <Flex direction="col">
-            <p>aboutData?.sectionLabel</p>
-            <h4>
-              aboutData?.title <br /> aboutData?.subtitle
-            </h4>
-          </Flex>
+    <Wrapper className="my-4 bg-background-greyWhite">
+      <AnimatedSection animationVariant="slideRight">
+        {(inView) => (
+          <Flex>
+            <Flex
+              direction="col"
+              justify="start"
+              align="start"
+              gap="16"
+              className="w-[90%]  rounded-4xl p-5"
+            >
+              <Flex direction="col" align="start">
+                <AnimatedSection animationVariant="zoomIn">
+                  {(inView) => (
+                    <Flex direction="col" align="start">
+                      <Flex
+                        justify="start"
+                        className="text-text-blue uppercase font-semibold tertiary-font"
+                        gap="2"
+                      >
+                        {" "}
+                        <MessageSquareMore strokeWidth={2.25} />{" "}
+                        {testimonialData.testimonialHeading}
+                      </Flex>
+                      <Flex justify="between">
+                        <Flex justify="start" align="start" width="half" className="text-text-primary text-3xl font-semibold text-shadow-lg secondary-font">
+                          {testimonialData.testimonialSubHeading}
+                        </Flex>
+                        <Flex justify="end" align="start" width="half" className="text-text-tertiary font-medium text-sm">
+                          {" "}
+                          <p className="w-[70%]">
 
-          <SwiperCarousel
-            data={data}
-            SlideComponent={Cardcontent}
-            gap={40} // optional
-            slidesPreview={2}
-          />
-        </div>
-      </Flex>
+                          {testimonialData.testimonialDescription}
+                          </p>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+                  )}
+                </AnimatedSection>
+              </Flex>
+            </Flex>
+          </Flex>
+        )}
+      </AnimatedSection>
+      <InfiniteTestimonialScroller
+        commentData={testimonialData.testimonialCard}
+        scrollEffect={true}
+      />
+      <InfiniteTestimonialScroller
+        commentData={testimonialData.testimonialCard}
+      />
     </Wrapper>
   );
 };

@@ -35,18 +35,6 @@ export const footerData = [
       title: "Product",
       links: ["Features", "Pricing", "Integrations", "Demo", "What's New"],
     },
-    {
-      title: "Support",
-      links: ["Help Center", "Terms of Service", "Privacy Policy", "Status", "API Docs"],
-    },
-    {
-      title: "Resources",
-      links: ["Docs", "Guides", "Community", "Events", "Partners"],
-    },
-    {
-      title: "Follow Us",
-      links: ["Twitter", "LinkedIn", "Instagram", "Facebook", "YouTube"],
-    },
   ];
   
 export const bannerData = {

@@ -73,7 +73,10 @@ const Pricing = ({price}:any) => {
   const { inView, ref } = useInViewAnimation();
 
   return (
-    <Wrapper className="my-4 bg-background-greyWhite" ref={ref}>
+    <Wrapper className="my-4 " ref={ref}          style={{
+      backgroundImage: "radial-gradient(#00000069 0px, #fff 1px)",
+      backgroundSize: "10px 10px",
+    }}>
       <AnimatedSection animationVariant="slideRight" >
         {(inView) => (
           <Flex>
@@ -82,7 +85,9 @@ const Pricing = ({price}:any) => {
               justify="start"
               align="start"
               gap="16"
-              className="w-[90%] bg-background-greyWhite rounded-4xl p-5 "
+              className="w-[90%]  rounded-4xl p-5 "
+     
+      
             >
               <Flex direction="col" align="start">
                 <AnimatedSection
@@ -93,14 +98,14 @@ const Pricing = ({price}:any) => {
                     <Flex direction="col" align="start">
                       <Flex
                         justify="start"
-                        className="text-text-blue uppercase font-semibold"
+                        className="text-text-blue uppercase font-semibold tertiary-font"
                         gap="2"
                       >
                         {" "}
                         <WalletMinimal strokeWidth={2.25} />{" "}
                         {price.pricingHeading}
                       </Flex>
-                      <h4 className="text-text-primary text-2xl font-semibold text-shadow-lg">
+                      <h4 className="text-text-primary text-2xl font-semibold text-shadow-lg secondary-font">
                         {price.pricingSubHeading}
                       </h4>
                       <p className="text-text-tertiary font-medium text-sm">
@@ -116,14 +121,14 @@ const Pricing = ({price}:any) => {
                   return (
                     <Flex
                       direction="col"
-                      className="bg-text-secondary  w-full min-h-96 p-5 rounded-lg hover:border-2 ease-in-out duration-300 transition delay-150 border-text-blue hover:scale-105"
+                      className="bg-background-greyWhite  w-full min-h-96 p-5 rounded-lg hover:border-2 ease-in-out duration-300 transition delay-150 border-text-blue hover:scale-105"
                       align="start"
                       justify="between"
                      
                     >
                       <Flex
                         justify="between"
-                        className="text-text-primary text-xl font-medium text-shadow-md uppercase"
+                        className="text-text-primary text-xl font-medium text-shadow-md uppercase secondary-font font-semibold"
                       >
                         {price.priceCardHeading}{" "}
                         {

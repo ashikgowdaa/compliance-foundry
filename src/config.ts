@@ -40,5 +40,8 @@ export const StaticWebsiteKeys = {
     },
     pricing:{
       getPricing:"pricings?populate=*"
+    },
+    testimonial:{
+      getTestimonials:"testimonials?populate[testimonialCard][populate]=authorImage"
     }
   }

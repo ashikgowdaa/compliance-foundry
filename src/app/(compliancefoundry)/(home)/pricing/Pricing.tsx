@@ -10,8 +10,8 @@ export default async function PricingSection({
   websiteSection: string;
 }) {
   const data = await getMethod({ url: API_ENDPOINTS.pricing.getPricing });
-
-  if (!data || !data?.data )
+ console.log(data,"data")
+  if (!data || !data?.data ||data?.data[0]?.WebsiteDomain?.webSiteKeys !== websiteSection)
     return <ErrorComponent errorText="Error Fetching Pricing Data " />;
 
   return <Pricing price={data.data[0]} />;

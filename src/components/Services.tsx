@@ -26,29 +26,29 @@ const Services = ({ services }: { services: ServicesProps }) => {
               direction="col"
               className="w-[90%] bg-background-greyWhite rounded-4xl p-5 "
             >
-              <Flex direction="col" width="half" className="text-center">
+              <Flex direction="col" width="half" className="text-center" >
                 <AnimatedSection
                   animationVariant="fadeDown"
                   duration={0.6}
                   delay={0.8}
                 >
                   {(inView) => (
-                    <>
+                    <Flex gap="6" direction="col">
                       <Flex
-                        className="text-text-blue uppercase font-semibold"
+                        className="text-text-blue uppercase font-semibold tertiary-font"
                         gap="2"
                       >
                         {" "}
                         <Lightbulb strokeWidth={2} /> {services.serviceHeading}
                       </Flex>
-                      <h4 className="text-text-primary text-3xl font-semibold text-shadow-lg">
+                      <h4 className="text-text-primary text-3xl font-semibold text-shadow-lg secondary-font">
                         {services.serviceSubheading}
                       </h4>
                       <p className="text-text-tertiary font-medium">
                         {" "}
                         {services.servicesDescription}
                       </p>
-                    </>
+                    </Flex>
                   )}
                 </AnimatedSection>
               </Flex>

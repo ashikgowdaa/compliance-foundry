@@ -59,11 +59,12 @@ const About = ({ aboutData }: aboutDataProps) => {
         {(inView)=>    <div  >
         <Flex>
           <div className="w-[95%]">
-            <Flex className="mt-4" justify="around" gap="4">
+            <Flex className="mt-4" direction="col-sm-row" justify="around" gap="4">
               <Flex
                 justify="center"
                 align="center"
-                className=" w-1/2 max-w-[600px]"
+                className="max-w-[600px]"
+                responsiveWidth="full-sm-half"
               >
                 <img
                   src={
@@ -80,16 +81,17 @@ const About = ({ aboutData }: aboutDataProps) => {
                 gap="0"
                 align="start"
                 justify="center"
+                responsiveWidth="full-sm-half"
               >
                 <Flex direction="col" align="start">
                   <Flex
-                    className="text-text-blue font-semibold uppercase"
+                    className="text-text-blue font-semibold uppercase tertiary-font"
                     gap="2"
                     justify="start"
                   >
                     <Brain /> {aboutData?.titleText}
                   </Flex>
-                  <h4 className="text-text-primary text-4xl text-start leading-snug">
+                  <h4 className="text-text-primary text-4xl text-start leading-snug secondary-font">
                     {aboutData?.descriptionText}
                   </h4>
                 </Flex>
@@ -117,7 +119,7 @@ const About = ({ aboutData }: aboutDataProps) => {
                         {startCount ? (
                           <CountUp
                             key={`${index}-${startCount}`} // force re-render on scroll in
-                            className="text-text-blue text-3xl text-start font-semibold"
+                            className="text-text-blue text-3xl text-start font-semibold secondary-font"
                             end={numericValue}
                             duration={6}
                             suffix={suffix}

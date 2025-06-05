@@ -40,9 +40,9 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
         className="banner !relative text-white bg-fixed"
         style={imageUrl ? { backgroundImage: `url('${imageUrl}')` } : {}}
       >
-        <Flex justify="between" className="w-[90%] pb-14" gap="12">
+        <Flex justify="between" direction="col-sm-row"  className="w-[90%] pb-14" gap="12">
           <Flex >
-          <div className="bannerHeader w-full ">
+          <div className="bannerHeader w-full secondary-font ">
             {bannerData?.MainText.split("\n").map((line, i) => (
               <React.Fragment key={i}>
                 {line}
@@ -52,13 +52,15 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
           </div>
           </Flex>
           <Flex className="w-full" justify="end">
-            <span className="bannerSubHeader w-full  max-w-[80%]">{bannerData?.SubText}</span>
+            <span className="bannerSubHeader w-full  sm:max-w-[80%]">{bannerData?.SubText}</span>
           </Flex>
         </Flex>
       <div className="absolute bg-gradient-to-t from-black to-transparent top-0 h-full w-full">{""}</div>
       </Flex>
+
+
       <Flex direction="col" gap="2" className="bg-background-greyWhite border-b-1 border-b-gray-300 py-6">
-        <h1 className="text-text-tertiary font-semibold text-shadow-lg/5 text-sm">{bannerData?.brandHeadingText}</h1>
+        <h1 className="text-text-tertiary font-semibold text-shadow-lg/5 text-sm ">{bannerData?.brandHeadingText}</h1>
         <Flex justify="around">
           {
             bannerData?.ClientLogo && (

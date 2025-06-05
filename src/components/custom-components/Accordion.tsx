@@ -46,7 +46,7 @@ export default function Accordion({ accordionData }: AccordionProps) {
                 className="w-full flex items-center justify-between gap-4"
                 onClick={() => setOpenId(open ? null : accordionId)}
               >
-                <div className="flex items-baseline gap-16">
+                <div className="flex items-baseline gap-16 secondary-font">
                   <span
                     className={`text-2xl w-6 font-semibold text-shadow-md ${
                       open ? "text-text-blue" : "text-text-primary"
