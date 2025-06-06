@@ -29,7 +29,7 @@ const Testimonials = ({
   testimonialData: TestimonialData;
 }) => {
   return (
-    <Wrapper className="my-4 bg-background-greyWhite">
+    <Wrapper className=" ">
       <AnimatedSection animationVariant="slideRight">
         {(inView) => (
           <Flex>
@@ -46,7 +46,7 @@ const Testimonials = ({
                     <Flex direction="col" align="start">
                       <Flex
                         justify="start"
-                        className="text-text-blue uppercase font-semibold tertiary-font"
+                        className="text-text-blue uppercase font-normal tertiary-font"
                         gap="2"
                       >
                         {" "}
@@ -54,7 +54,7 @@ const Testimonials = ({
                         {testimonialData.testimonialHeading}
                       </Flex>
                       <Flex justify="between" direction="col-sm-row">
-                        <Flex justify="start" align="start" responsiveWidth="full-sm-half" className="text-text-primary text-3xl font-semibold text-shadow-lg secondary-font">
+                        <Flex justify="start" align="start" responsiveWidth="full-sm-half" className="text-text-primary text-3xl font-medium text-shadow-lg secondary-font">
                           {testimonialData.testimonialSubHeading}
                         </Flex>
                         <Flex justify="start-sm-center" align="start" responsiveWidth="full-sm-half" className="text-text-tertiary  text-sm">

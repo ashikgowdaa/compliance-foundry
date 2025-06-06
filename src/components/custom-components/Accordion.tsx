@@ -48,14 +48,14 @@ export default function Accordion({ accordionData }: AccordionProps) {
               >
                 <div className="flex items-baseline gap-4 secondary-font sm:gap-16">
                   <span
-                    className={`text-md  w-6 font-semibold text-shadow-md sm:text-2xl ${
+                    className={`text-md  text-wrap font-medium text-shadow-md sm:text-2xl ${
                       open ? "text-text-blue" : "text-text-primary"
                     }`}
                   >
                     {parseInt(accordionId).toString().padStart(2, "0")}
                   </span>
                   <span
-                    className={`uppercase font-semibold text-shadow-md ${
+                    className={`w-12 sm:w-full uppercase text-wrap font-medium text-shadow-md ${
                       open ? "text-text-blue" : "text-text-primary"
                     } tracking-wider text-start text-sm sm:text-2xl`}
                   >
@@ -64,11 +64,11 @@ export default function Accordion({ accordionData }: AccordionProps) {
                 </div>
 
                 {open ? (
-                  <span className="w-12 h-8 sm:h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
+                  <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
                     <ArrowDown color="#000"size="24"/>
                   </span>
                 ) : (
-                  <span className="w-12 h-8 sm:h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
+                  <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
                     <ArrowUp color="#000" size="24" />
                   </span>
                 )}
@@ -81,7 +81,7 @@ export default function Accordion({ accordionData }: AccordionProps) {
                     : "max-h-0 opacity-0 py-0"
                 } flex justify-between gap-12 items-start sm:flex-row flex-col`}
               >
-                <p className="text-md max-w-xl w-full text-text-tertiary text-justify">
+                <p className="text-sm sm:text-normal max-w-xl w-full text-text-tertiary text-justify">
                   {accordionContentDescription}
                 </p>
 

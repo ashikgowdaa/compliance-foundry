@@ -74,10 +74,10 @@ const Pricing = ({ price }: any) => {
 
   return (
     <Wrapper
-      className="my-4 "
+      className="!py-8 "
       ref={ref}
       style={{
-        backgroundImage: "radial-gradient(#00000069 0px, #fff 1px)",
+        backgroundImage: "radial-gradient(#00000069 0px, #F3F4FA 1px)",
         backgroundSize: "10px 10px",
       }}
     >
@@ -97,14 +97,14 @@ const Pricing = ({ price }: any) => {
                     <Flex direction="col" align="start">
                       <Flex
                         justify="start"
-                        className="text-text-blue uppercase font-semibold tertiary-font"
+                        className="text-text-blue uppercase font-normal tertiary-font"
                         gap="2"
                       >
                         {" "}
                         <WalletMinimal strokeWidth={2.25} />{" "}
                         {price.pricingHeading}
                       </Flex>
-                      <h4 className="text-text-primary text-2xl font-semibold text-shadow-lg secondary-font text-start">
+                      <h4 className="text-text-primary text-2xl font-medium text-shadow-lg secondary-font text-start">
                         {price.pricingSubHeading}
                       </h4>
                       <p className="text-text-tertiary font-medium text-sm">
@@ -120,13 +120,13 @@ const Pricing = ({ price }: any) => {
                   return (
                     <Flex
                       direction="col"
-                      className="bg-background-greyWhite  w-full min-h-96 p-5 rounded-lg hover:border-2 ease-in-out duration-300 transition delay-150 border-text-blue hover:scale-105"
+                      className="bg-[#fafbfe]  w-full min-h-96 p-5 rounded-lg hover:border-2 ease-in-out duration-300 transition delay-150 border-text-blue hover:scale-105 shadow "
                       align="start"
                       justify="between"
                     >
                       <Flex
                         justify="between"
-                        className="text-text-primary text-xl font-medium text-shadow-md uppercase secondary-font font-semibold"
+                        className="text-text-primary text-xl font-medium text-shadow-md uppercase secondary-font "
                       >
                         {price.priceCardHeading}{" "}
                         {price?.priceCardTag && (

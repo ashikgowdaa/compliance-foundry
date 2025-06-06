@@ -1,3 +1,5 @@
+import { Instagram, Linkedin, X, Youtube } from "lucide-react"; 
+
 export  const headerDataWebsite = {
   logoImage: "https://media.licdn.com/dms/image/v2/D560BAQHI9GXVQmSMDA/company-logo_200_200/company-logo_200_200/0/1697048974016/compliancefoundry_logo?e=1752710400&v=beta&t=wyCT94nYtvvl8hsL-9REJw1uDZEgoF66UIa7FzN8WYU", 
   navLinks: [
@@ -34,6 +36,16 @@ export const footerData = [
     {
       title: "Product",
       links: ["Features", "Pricing", ],
+    },
+    {
+      title: "Join Us",
+      links: [
+        { icon: <Linkedin />, href: "https://www.linkedin.com" },
+        { icon: <X />, href: "https://twitter.com" },
+        { icon: <Instagram />, href: "https://twitter.com" },
+       { icon: <Youtube />, href: "https://twitter.com" },
+
+      ],
     },
   ];
   

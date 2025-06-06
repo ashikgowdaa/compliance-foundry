@@ -22,7 +22,7 @@ interface ResourceProps {
 
 const Portfolio = ({ data }: { data: ResourceProps }) => {
   return (
-    <Wrapper className="bg-primary">
+    <Wrapper className=" !py-12">
       <Flex>
         <Flex className="w-[90%]" direction="col" gap="12">
           <AnimatedSection
@@ -33,11 +33,11 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
             {(inView: boolean) => (
               <Flex direction="col">
                 <Flex direction="col"responsiveWidth="full-sm-half">
-                  <Flex className="text-text-blue uppercase font-semibold tertiary-font">
+                  <Flex className="text-text-blue uppercase font-normal tertiary-font">
                     {" "}
                     <LibraryBig /> {data.resourceHeading}
                   </Flex>
-                  <span className="text-text-primary text-2xl sm:text-3xl text-medium text-center font-semibold text-shadow-md secondary-font">
+                  <span className="text-text-primary text-2xl sm:text-3xl text-medium text-center font-medium text-shadow-md secondary-font">
                     {data.resourceSubHeading}
                   </span>
                 </Flex>
@@ -56,6 +56,7 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
                     color?: string;
                     size?: number;
                     className?: string;
+                    strokeWidth?: number;
                   }>;
 
                   return (
@@ -67,8 +68,8 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
                       align="start"
                       justify="start"
                     >
-                      {Icon && <Icon color="blue" size={30} />}
-                      <div className="text-text-primary text-xl w-1/2 font-semibold secondary-font">
+                      {Icon && <Icon color="#2D69FF" size={30} strokeWidth={1.5}  />}
+                      <div className="text-text-primary text-xl w-1/2 font-medium secondary-font">
                         {item.title}
                       </div>
                       <div className="text-text-tertiary text-sm w-[95%] ">

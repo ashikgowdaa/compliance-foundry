@@ -55,12 +55,12 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
             <span className="bannerSubHeader w-full  sm:max-w-[80%]">{bannerData?.SubText}</span>
           </Flex>
         </Flex>
-      <div className="absolute bg-gradient-to-t from-black to-transparent top-0 h-full w-full">{""}</div>
+      <div className="absolute bg-gradient-to-t from-[#0000004f] to-transparent top-0 h-full w-full">{""}</div>
       </Flex>
 
 
       <Flex direction="col" gap="2" className="text-center bg-background-greyWhite border-b-1 border-b-gray-300 py-0 ">
-        <h1 className="text-text-tertiary font-semibold text-shadow-lg/5 text-xs sm:text-sm py-3 ">{bannerData?.brandHeadingText}</h1>
+        <h1 className="text-text-tertiary font-semibold  text-xs sm:text-sm pt-4 ">{bannerData?.brandHeadingText}</h1>
         <Flex justify="around">
           {
             bannerData?.ClientLogo && (
