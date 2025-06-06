@@ -59,7 +59,7 @@ const About = ({ aboutData }: aboutDataProps) => {
         {(inView)=>    <div  >
         <Flex>
           <div className="w-[95%]">
-            <Flex className="mt-4" direction="col-sm-row" justify="around" gap="4">
+            <Flex className="mt-4 gap-12" direction="col-sm-row" justify="around" gap="4">
               <Flex
                 justify="center"
                 align="center"
@@ -78,7 +78,7 @@ const About = ({ aboutData }: aboutDataProps) => {
               <Flex
                 width="half"
                 direction="col"
-                gap="0"
+                gap="2"
                 align="start"
                 justify="center"
                 responsiveWidth="full-sm-half"
@@ -99,7 +99,7 @@ const About = ({ aboutData }: aboutDataProps) => {
                   {aboutData?.aboutDescription}
                 </h6>
 
-                <Flex className="" gap="10" align="center">
+                <Flex className="gap-0" gap="10" align="center">
                   {projectData.map((item, index) => {
                     const numericValue = parseInt(item.value.replace(/\D/g, ""));
                     const suffix =
@@ -114,27 +114,28 @@ const About = ({ aboutData }: aboutDataProps) => {
                         key={index}
                         direction="col"
                         className="card text-start"
-                        align="start"
+                         align="start" 
+                         gap="2"
                       >
                         {startCount ? (
                           <CountUp
                             key={`${index}-${startCount}`} // force re-render on scroll in
-                            className="text-text-blue text-3xl text-start font-semibold secondary-font"
+                            className="text-text-blue text-2xl sm:text-3xl text-start font-semibold secondary-font !p-0 "
                             end={numericValue}
-                            duration={6}
+                            duration={4}
                             suffix={suffix}
                           />
                         ) : (
-                          <span className="text-text-blue text-3xl text-start font-semibold">
+                          <span className="text-text-blue text-2xl text-start font-semibold">
                             0{suffix}
                           </span>
                         )}
-                        <p className="text-gray-600">{item.type}</p>
+                        <p className="text-gray-600 text-sm sm:text-lg">{item.type}</p>
                       </Flex>
                     );
                   })}
                 </Flex>
-                <Button title="About Us" variant="outline" />
+                <Button title="About Us" variant="outline" width="half" />
               </Flex>
             </Flex>
           </div>

@@ -96,6 +96,7 @@ body {
   }
 
   .scroll-left {
+    display: inline-block;
     animation: scroll-left 25s linear infinite;
   }
 

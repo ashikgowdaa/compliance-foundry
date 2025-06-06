@@ -24,6 +24,7 @@ const flexVariants = cva("flex", {
       "center-sm-between": "justify-center sm:justify-between", // Mobile: center, Desktop: between
       "start-sm-center": "justify-start sm:justify-center", // Mobile: start, Desktop: center
       "between-sm-around": "justify-between sm:justify-around", // Mobile: between, Desktop: around
+      "start-sm-end": "items-start sm:items-end",
     },
     align: {
       start: "items-start",
@@ -33,6 +34,8 @@ const flexVariants = cva("flex", {
       baseline: "items-baseline",
       "center-sm-start": "items-center sm:items-start", // Mobile: center, Desktop: start
       "start-sm-center": "items-start sm:items-center", // Mobile: start, Desktop: center
+      // Mobile: center, Desktop: end
+
     },
     gap: {
       "0": "gap-0",

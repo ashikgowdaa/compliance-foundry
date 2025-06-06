@@ -38,7 +38,7 @@ const Testimonials = ({
               justify="start"
               align="start"
               gap="16"
-              className="w-[90%]  rounded-4xl p-5"
+              className="w-[90%]  rounded-4xl sm:p-5"
             >
               <Flex direction="col" align="start">
                 <AnimatedSection animationVariant="zoomIn">
@@ -53,13 +53,13 @@ const Testimonials = ({
                         <MessageSquareMore strokeWidth={2.25} />{" "}
                         {testimonialData.testimonialHeading}
                       </Flex>
-                      <Flex justify="between">
-                        <Flex justify="start" align="start" width="half" className="text-text-primary text-3xl font-semibold text-shadow-lg secondary-font">
+                      <Flex justify="between" direction="col-sm-row">
+                        <Flex justify="start" align="start" responsiveWidth="full-sm-half" className="text-text-primary text-3xl font-semibold text-shadow-lg secondary-font">
                           {testimonialData.testimonialSubHeading}
                         </Flex>
-                        <Flex justify="end" align="start" width="half" className="text-text-tertiary font-medium text-sm">
+                        <Flex justify="start-sm-center" align="start" responsiveWidth="full-sm-half" className="text-text-tertiary  text-sm">
                           {" "}
-                          <p className="w-[70%]">
+                          <p className="w-full sm:w-[70%]">
 
                           {testimonialData.testimonialDescription}
                           </p>

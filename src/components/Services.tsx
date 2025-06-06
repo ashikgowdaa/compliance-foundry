@@ -24,16 +24,16 @@ const Services = ({ services }: { services: ServicesProps }) => {
           <Flex>
             <Flex
               direction="col"
-              className="w-[90%] bg-background-greyWhite rounded-4xl p-5 "
+              className="w-[90%] bg-background-greyWhite rounded-4xl p-3 "
             >
-              <Flex direction="col" width="half" className="text-center" >
+              <Flex direction="col" responsiveWidth="full-sm-half" className="text-center" >
                 <AnimatedSection
                   animationVariant="fadeDown"
                   duration={0.6}
                   delay={0.8}
                 >
                   {(inView) => (
-                    <Flex gap="6" direction="col">
+                    <Flex gap="6" direction="col" >
                       <Flex
                         className="text-text-blue uppercase font-semibold tertiary-font"
                         gap="2"
@@ -41,10 +41,10 @@ const Services = ({ services }: { services: ServicesProps }) => {
                         {" "}
                         <Lightbulb strokeWidth={2} /> {services.serviceHeading}
                       </Flex>
-                      <h4 className="text-text-primary text-3xl font-semibold text-shadow-lg secondary-font">
+                      <h4 className="text-text-primary text-2xl sm:text-3xl font-semibold text-shadow-lg secondary-font w-full">
                         {services.serviceSubheading}
                       </h4>
-                      <p className="text-text-tertiary font-medium">
+                      <p className="text-text-tertiary font-normal text-sm sm:text-base">
                         {" "}
                         {services.servicesDescription}
                       </p>

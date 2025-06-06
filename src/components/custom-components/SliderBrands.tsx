@@ -11,9 +11,9 @@ interface Brand {
 
 const InfiniteBrandScroller = ({ brands }: { brands: Brand[] }) => {
     return (
-        <div className="overflow-hidden relative py-4">
+        <div className="overflow-hidden relative py-0 sm:py-4">
          <div className="scroll-left paused-on-hover whitespace-nowrap ">
-          <div className="inline-flex gap-32">
+          <div className="inline-flex gap-10 sm:gap-32">
             {[...brands, ...brands, ...brands, ...brands , ...brands, ...brands, ...brands, ...brands].map((src, index) => (
               <div className="w-24">
                 <img

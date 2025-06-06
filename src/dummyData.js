@@ -29,11 +29,11 @@ export  const headerData = {
 export const footerData = [
     {
       title: "Company",
-      links: ["About Us", "Careers", "Press", "Blog", "Contact"],
+      links: ["About Us",  "Contact"],
     },
     {
       title: "Product",
-      links: ["Features", "Pricing", "Integrations", "Demo", "What's New"],
+      links: ["Features", "Pricing", ],
     },
   ];
   

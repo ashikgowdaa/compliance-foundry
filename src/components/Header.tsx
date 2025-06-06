@@ -38,13 +38,13 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
 
   return (
 <Wrapper
-  className="text-text-primary !py-3"
+  className="text-text-primary !py-1 sm:!py-3"
   style={{ background: "var(--color-background-greyWhite)" }}
 >
-  <Flex justify="around" className="px-4 sm:px-8 sm:!justify-between">
+  <Flex justify="around" className="px-0   sm:px-8 sm:!justify-between">
 
     <Flex justify="start" className="w-1/4 sm:w-auto">
-      <h1 className="text-lg sm:text-xl secondary-font font-extrabold">
+      <h1 className="text-md sm:text-xl secondary-font font-bold">
         Compliance <br /> Foundry
       </h1>
     </Flex>

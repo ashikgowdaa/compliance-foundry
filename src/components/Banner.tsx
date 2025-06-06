@@ -40,7 +40,7 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
         className="banner !relative text-white bg-fixed"
         style={imageUrl ? { backgroundImage: `url('${imageUrl}')` } : {}}
       >
-        <Flex justify="between" direction="col-sm-row"  className="w-[90%] pb-14" gap="12">
+        <Flex justify="between" direction="col-sm-row"  className="w-[90%] pb-8 gap-4 sm:pb-14" gap="12">
           <Flex >
           <div className="bannerHeader w-full secondary-font ">
             {bannerData?.MainText.split("\n").map((line, i) => (
@@ -59,8 +59,8 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
       </Flex>
 
 
-      <Flex direction="col" gap="2" className="bg-background-greyWhite border-b-1 border-b-gray-300 py-6">
-        <h1 className="text-text-tertiary font-semibold text-shadow-lg/5 text-sm ">{bannerData?.brandHeadingText}</h1>
+      <Flex direction="col" gap="2" className="text-center bg-background-greyWhite border-b-1 border-b-gray-300 py-0 ">
+        <h1 className="text-text-tertiary font-semibold text-shadow-lg/5 text-xs sm:text-sm py-3 ">{bannerData?.brandHeadingText}</h1>
         <Flex justify="around">
           {
             bannerData?.ClientLogo && (

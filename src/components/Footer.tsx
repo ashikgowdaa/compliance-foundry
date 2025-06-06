@@ -15,11 +15,11 @@ const Footer = ({ footerData }: { footerData: FooterData[] }) => {
     <>
       <Wrapper className="bg-[#0D111B] !m-0 relative !mt-48 flex justify-center">
         <Flex direction={"col"} className="absolute h-48 w-[70%] rounded-2xl top-[-29%]" style={{ background:"var(--color-background-linear-blue)" }} gap="8">
-          <h3 className="text-text-secondary text-4xl text-shadow-lg secondary-font">Let’s Talk Compliance, Security, and Scale</h3>
+          <h3 className="text-text-secondary text-xl sm:text-4xl text-shadow-lg secondary-font text-center">Let’s Talk Compliance, Security, and Scale</h3>
           <Button title="Contact Us" variant="ghost"/>
         </Flex>
-        <Flex align="start" className="pt-[8%] w-[70%]"  >
-          <Flex direction="col" justify="between" gap="8">
+        <Flex align="start" direction="col-sm-row" className="pt-[24%] sm:pt-[8%] w-[90%] sm:w-[70%]"  >
+          <Flex direction="col" justify="center" align="start-sm-center" gap="8" className="gap-2">
             <span className="text-2xl text-text-blue font-bold text-shadow-lg/10 secondary-font">
               Compliance Foundry
             </span>
@@ -31,12 +31,12 @@ const Footer = ({ footerData }: { footerData: FooterData[] }) => {
               </Link>
             </Flex>
           </Flex>
-          <Flex className=" text-white" justify="between" align="end" >
+          <Flex className=" text-white" justify="start-sm-end" align="end" direction="col-sm-row" >
             {footerData.map((section, index) => (
               <Flex
                 direction="col"
                 key={index}
-              
+              align="start-sm-center"
               >
                 <span className="footer-category-header text-text-blue secondary-font">{section.title}</span>
                 {section.links.map((link, i) => (

@@ -69,15 +69,19 @@ type priceProps = {
   priceButtonText: string;
 };
 
-const Pricing = ({price}:any) => {
+const Pricing = ({ price }: any) => {
   const { inView, ref } = useInViewAnimation();
 
   return (
-    <Wrapper className="my-4 " ref={ref}          style={{
-      backgroundImage: "radial-gradient(#00000069 0px, #fff 1px)",
-      backgroundSize: "10px 10px",
-    }}>
-      <AnimatedSection animationVariant="slideRight" >
+    <Wrapper
+      className="my-4 "
+      ref={ref}
+      style={{
+        backgroundImage: "radial-gradient(#00000069 0px, #fff 1px)",
+        backgroundSize: "10px 10px",
+      }}
+    >
+      <AnimatedSection animationVariant="slideRight">
         {(inView) => (
           <Flex>
             <Flex
@@ -85,15 +89,10 @@ const Pricing = ({price}:any) => {
               justify="start"
               align="start"
               gap="16"
-              className="w-[90%]  rounded-4xl p-5 "
-     
-      
+              className="w-[90%]  rounded-4xl sm:p-5 "
             >
               <Flex direction="col" align="start">
-                <AnimatedSection
-                  animationVariant="zoomIn"
-           
-                >
+                <AnimatedSection animationVariant="zoomIn">
                   {(inView) => (
                     <Flex direction="col" align="start">
                       <Flex
@@ -105,7 +104,7 @@ const Pricing = ({price}:any) => {
                         <WalletMinimal strokeWidth={2.25} />{" "}
                         {price.pricingHeading}
                       </Flex>
-                      <h4 className="text-text-primary text-2xl font-semibold text-shadow-lg secondary-font">
+                      <h4 className="text-text-primary text-2xl font-semibold text-shadow-lg secondary-font text-start">
                         {price.pricingSubHeading}
                       </h4>
                       <p className="text-text-tertiary font-medium text-sm">
@@ -116,38 +115,40 @@ const Pricing = ({price}:any) => {
                   )}
                 </AnimatedSection>
               </Flex>
-              <Flex  gap="10">
-                {price?.priceCard.map((price:any) => {
+              <Flex gap="10" direction="col-sm-row">
+                {price?.priceCard.map((price: any) => {
                   return (
                     <Flex
                       direction="col"
                       className="bg-background-greyWhite  w-full min-h-96 p-5 rounded-lg hover:border-2 ease-in-out duration-300 transition delay-150 border-text-blue hover:scale-105"
                       align="start"
                       justify="between"
-                     
                     >
                       <Flex
                         justify="between"
                         className="text-text-primary text-xl font-medium text-shadow-md uppercase secondary-font font-semibold"
                       >
                         {price.priceCardHeading}{" "}
-                        {
-                            price?.priceCardTag && (
-                        <span className="text-text-blue text-sm font-semibold text-shadow-2xs">
-                          {"Popular"}
-                        </span>
-                            )
-                        }
+                        {price?.priceCardTag && (
+                          <span className="text-text-blue text-sm font-semibold text-shadow-2xs">
+                            {"Popular"}
+                          </span>
+                        )}
                       </Flex>
-                      <p className="text-text-tertiary">{price.pricingCardDescription}</p>
+                      <p className="text-text-tertiary">
+                        {price.pricingCardDescription}
+                      </p>
                       <Flex direction="col" align="start" justify="start">
-                        {price?.priceCardPoints.map((point:any) => {
+                        {price?.priceCardPoints.map((point: any) => {
                           return (
-                            <Flex justify="start">
-                              <CircleCheck color="#2D69FF" />{" "}
-                              <span className="text-text-tertiary">
+                            <Flex justify="between" className="gap-2">
+                              <Flex className="w-[10%]">
+                                <CircleCheck color="#2D69FF" size="24" />{" "}
+                              </Flex>
+
+                              <Flex justify="start" className="text-text-tertiary text-sm">
                                 {point?.children[0].text}
-                              </span>
+                              </Flex>
                             </Flex>
                           );
                         })}

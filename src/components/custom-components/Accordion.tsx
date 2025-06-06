@@ -27,7 +27,7 @@ export default function Accordion({ accordionData }: AccordionProps) {
   const [openId, setOpenId] = useState<string | null>("2");
 
   return (
-    <div className="w-full px-6 py-8 space-y-6 rounded-md">
+    <div className="w-full px-0  py-8 space-y-6 rounded-md  sm:px-6">
       {accordionData?.map(
         ({
           accordionId,
@@ -43,12 +43,12 @@ export default function Accordion({ accordionData }: AccordionProps) {
               className="border-b-[2px] border-gray-300 pb-6"
             >
               <button
-                className="w-full flex items-center justify-between gap-4"
+                className="w-full flex items-center justify-between sm:gap-4"
                 onClick={() => setOpenId(open ? null : accordionId)}
               >
-                <div className="flex items-baseline gap-16 secondary-font">
+                <div className="flex items-baseline gap-4 secondary-font sm:gap-16">
                   <span
-                    className={`text-2xl w-6 font-semibold text-shadow-md ${
+                    className={`text-md  w-6 font-semibold text-shadow-md sm:text-2xl ${
                       open ? "text-text-blue" : "text-text-primary"
                     }`}
                   >
@@ -57,19 +57,19 @@ export default function Accordion({ accordionData }: AccordionProps) {
                   <span
                     className={`uppercase font-semibold text-shadow-md ${
                       open ? "text-text-blue" : "text-text-primary"
-                    } tracking-wider text-2xl`}
+                    } tracking-wider text-start text-sm sm:text-2xl`}
                   >
                     {accordionTitle}
                   </span>
                 </div>
 
                 {open ? (
-                  <span className="w-12 h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
-                    <ArrowDown color="#000" />
+                  <span className="w-12 h-8 sm:h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
+                    <ArrowDown color="#000"size="24"/>
                   </span>
                 ) : (
-                  <span className="w-12 h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
-                    <ArrowUp color="#000" />
+                  <span className="w-12 h-8 sm:h-12 rounded-full border border-gray-600 flex justify-center items-center cursor-pointer">
+                    <ArrowUp color="#000" size="24" />
                   </span>
                 )}
               </button>
@@ -79,7 +79,7 @@ export default function Accordion({ accordionData }: AccordionProps) {
                   open
                     ? "max-h-[1000px] py-6 pt-6 opacity-100"
                     : "max-h-0 opacity-0 py-0"
-                } flex justify-between gap-12 items-start`}
+                } flex justify-between gap-12 items-start sm:flex-row flex-col`}
               >
                 <p className="text-md max-w-xl w-full text-text-tertiary text-justify">
                   {accordionContentDescription}

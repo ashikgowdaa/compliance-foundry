@@ -7,7 +7,7 @@ type ButtonProps = {
   className?: string;
   style?: React.CSSProperties;
   variant?: Variant;
-  width?: 'auto' | 'full' | 'fit';
+  width?: 'auto' | 'full' | 'fit' | 'half';
 };
 
 
@@ -23,6 +23,7 @@ const variantClasses: Record<Variant, string> = {
     auto: 'w-auto',
     full: 'w-full',
     fit: 'w-fit',
+    half: 'w-1/2',
   };
   
 
@@ -35,7 +36,7 @@ const Button = ({
   }: ButtonProps) => {
     return (
       <button
-      className={`px-2 py-2 sm:px-6 sm:py-3 text-sm sm:text-lg font-semibold rounded-3xl cursor-pointer ${variantClasses[variant]} ${widthClasses[width]} ${className}`}
+      className={`px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-lg font-semibold rounded-3xl cursor-pointer ${variantClasses[variant]} ${widthClasses[width]} ${className}`}
       style={style}
     >
       {title}
