@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
 
   return (
     <Wrapper
-      className="text-text-primary !py-1 sm:!py-3"
+      className=" text-text-primary !py-1 sm:!py-3 fixed top-[5%] left-0 w-full z-50 shadow-xl"
       style={{ background: "var(--color-background-greyWhite)" }}
     >
       <Flex

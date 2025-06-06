@@ -187,7 +187,7 @@ body {
 
 @layer components {
   .banner {
-    @apply !relative h-[85vh] w-full bg-cover bg-top text-white flex items-center justify-start
+    @apply !relative h-[85vh] w-full bg-fixed bg-cover bg-top text-white flex items-center justify-start
   }
 
   .button {

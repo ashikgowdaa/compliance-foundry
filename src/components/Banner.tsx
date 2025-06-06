@@ -37,7 +37,7 @@ const Banner = ({ bannerData }: { bannerData: BannerProps }) => {
         align="center"
         direction="col"
         justify="end"
-        className="banner !relative text-white bg-fixed"
+        className="banner !relative text-white "
         style={imageUrl ? { backgroundImage: `url('${imageUrl}')` } : {}}
       >
         <Flex justify="between" direction="col-sm-row"  className="w-[90%] pb-8 gap-4 sm:pb-14" gap="12">
