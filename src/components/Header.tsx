@@ -7,6 +7,7 @@ import Button from "./custom-components/Button";
 import {  ChevronUp, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactUsModal from "./custom-components/ContactUsModal";
+import Announcement from "./Announcement";
 
 type Subtype = {
   id: number;
@@ -23,9 +24,10 @@ type NavLink = {
 
 type HeaderProps = {
   headerData: NavLink[];
+  announcement:any;
 };
 
-const Header: React.FC<HeaderProps> = ({ headerData }) => {
+const Header: React.FC<HeaderProps> = ({ headerData , announcement }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [openId, setOpenId] = useState<number | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -51,12 +53,13 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
 
   return (
     <Wrapper
-      className=" text-text-primary !py-1 sm:!py-3 fixed top-[5%] left-0 w-full z-50 shadow-xl"
+      className=" text-text-primary !py-0 sticky top-[0%] left-0 w-full z-48 shadow-xl !px-0"
       style={{ background: "var(--color-background-greyWhite)" }}
     >
+      <Announcement announcementData={announcement}/>
       <Flex
         justify="around"
-        className="px-0 py-1  sm:border-0  sm:px-8 sm:!justify-between"
+        className="px-2 py-2  sm:border-0  sm:px-8 sm:!justify-between"
       >
         <Flex justify="start" className="w-1/4 sm:w-auto">
           <h1 className="text-md sm:text-xl secondary-font font-bold">
@@ -93,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ headerData }) => {
                   <div
                     className="
                   absolute left-0 top-full mt-2
-                  bg-background-greyWhite text-black p-2 rounded shadow-lg z-30
+                  bg-background-greyWhite text-gray-600 p-2 rounded shadow-lg z-30
                   min-w-[250px]
                 "
                     onMouseEnter={() => handleEnter(item.id)}

@@ -37,7 +37,7 @@ const Button = ({
   return (
     <button
      onClick={onClick}
-      className={`px-4 py-2 sm:px-8 sm:py-2 text-xs sm:text-lg font-normal rounded-full cursor-pointer ${variantClasses[variant]} ${widthClasses[width]} ${className}`}
+      className={`px-4 py-2 sm:px-7 sm:py-4 text-xs sm:text-[1rem] font-normal rounded-full cursor-pointer ${variantClasses[variant]} ${widthClasses[width]} ${className}`}
       style={style}
     >
       {title}

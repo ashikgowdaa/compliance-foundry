@@ -53,7 +53,7 @@ const About = ({ aboutData }: aboutDataProps) => {
 
   return (
     <Wrapper className=" !py-12" ref={ref}>
-      <AnimatedSection animationVariant="zoomIn" duration={0.5}>
+      <AnimatedSection animationVariant="zoomIn" duration={0.5} delay={0.1}>
         {(inView) => (
           <div>
             <Flex>
@@ -146,7 +146,7 @@ const About = ({ aboutData }: aboutDataProps) => {
                         );
                       })}
                     </Flex>
-                    <Button title="About Us" variant="outline"  className="w-full sm:w-[30%]" />//
+                    <Button title="About Us" variant="outline"  className="w-full sm:w-[20%]" />//
                   </Flex>
                 </Flex>
               </div>

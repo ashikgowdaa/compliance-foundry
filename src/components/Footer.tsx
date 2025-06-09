@@ -3,59 +3,49 @@ import Flex from "@/utitly-css/Flex";
 import Wrapper from "@/utitly-css/Wrapper";
 import Link from "next/link";
 import React from "react";
-import { Linkedin } from "lucide-react";
+import { Link2Icon, Linkedin } from "lucide-react";
 import Button from "./custom-components/Button";
 import footerCompaliance from "../../public/images/FooterComplianceFoundry.png";
-import ContactUsModal from "./custom-components/ContactUsModal"; 
-
-interface FooterLink {
-  href: string;
-  icon?: React.ReactNode;
-}
+import ContactUsModal from "./custom-components/ContactUsModal";
+import * as LucideIcons from "lucide-react";
 
 interface FooterData {
-  title: string;
-  links: (string | FooterLink)[];
+  floatingText: string;
+  floatingButtonText: string;
+  footerCopy: string;
+  footerCompanyName: string;
+  footerlink: {
+    sectionHeading: string;
+    footerLinks: { linkText: string; routeLink: string; icon?: keyof typeof LucideIcons }[];
+  }[];
 }
 
-const Footer = ({ footerData }: { footerData: FooterData[] }) => {
+const Footer = ({ footerData }: { footerData: FooterData }) => {
+
   const [modalOpen, setModalOpen] = React.useState(false);
   const handleModalOpen = () => {
     setModalOpen(!modalOpen);
   };
   return (
     <>
-    {
-      modalOpen && (
-        <ContactUsModal
-          open={modalOpen}
-       
-        
-        
-        />
-      )
-    }
+      {modalOpen && <ContactUsModal open={modalOpen} />}
       <Wrapper className="bg-[#0D111B] !m-0 relative !mt-48 flex  justify-center items-center">
         <Flex
           direction={"col"}
-          className="absolute h-48 w-[90%] sm:w-[70%] rounded-2xl top-[-18%] sm:top-[-29%]"
+          className="absolute h-48 w-[90%] sm:w-[70%] rounded-2xl top-[-18%] sm:top-[-35%]"
           style={{ background: "var(--color-background-linear-blue)" }}
           gap="8"
-        
         >
-          <h3 className="text-text-secondary text-xl sm:text-4xl text-shadow-lg secondary-font text-center">
-            Let’s Talk Compliance, Security, and Scale
+          <h3 className="text-text-secondary text-2xl sm:text-4xl text-shadow-lg secondary-font text-center">
+            {footerData?.floatingText}
           </h3>
-          <Button title="Contact Us" variant="ghost" onClick={handleModalOpen} />
+          <Button
+            title={footerData?.floatingButtonText}
+            variant="ghost"
+            onClick={handleModalOpen}
+          />
         </Flex>
-        <Flex direction="col" gap="12" className="pt-[20%] sm:pt-[5%]">
-          <Flex>
-            <img
-              src={footerCompaliance.src}
-              alt="Footer Background"
-              className="w-full h-auto object-cover"
-            />
-          </Flex>
+        <Flex direction="col" gap="12" className="pt-[25%] sm:pt-[8%]">
           <Flex
             align="start"
             direction="col-sm-row"
@@ -68,16 +58,19 @@ const Footer = ({ footerData }: { footerData: FooterData[] }) => {
               gap="8"
               className="gap-2"
             >
-              <span className="text-4xl text-text-blue font-bold text-shadow-lg/10 secondary-font text-start">
-                Compliance <br /> Foundry
-              </span>
-              <span className="text-gray-300 font-light text-sm">
-                Purpose-built compliance. Powered by engineers.
-              </span>
-              <span className="text-gray-300 font-light text-sm">
-                {" "}
-                © Compliance Foundry Inc. & FixplianceAI Inc., 2025
-              </span>
+              <span
+                className="text-4xl text-text-blue font-bold text-shadow-lg/10 secondary-font text-start"
+                dangerouslySetInnerHTML={{
+                  __html: footerData?.footerCompanyName.replace(" ", "<br/>"),
+                }}
+              />
+
+              <span
+                className="text-gray-300 font-light text-sm leading-8"
+                dangerouslySetInnerHTML={{
+                  __html: footerData?.footerCopy.replace("/n", "<br/>"),
+                }}
+              />
             </Flex>
             <Flex
               className=" text-white"
@@ -85,36 +78,38 @@ const Footer = ({ footerData }: { footerData: FooterData[] }) => {
               align="start"
               direction="col-sm-row"
             >
-              {footerData.map((section, index) => (
+              {footerData?.footerlink.map((section, index) => (
                 <Flex direction="col" key={index} align="start-sm-center">
                   <span className="footer-category-header secondary-font">
-                    {section.title}
+                    {section.sectionHeading}
                   </span>
 
                   <Flex
-                    direction={section.title === "Join Us" ? "row" : "col"}
+                    direction={
+                      section.sectionHeading.toLowerCase() === "join us"
+                        ? "col"
+                        : "col"
+                    }
                     gap="4"
                     className="mt-2"
                     justify="start-sm-center"
                     align="start-sm-center"
                   >
-                    {section.links.map((link, i) =>
-                      typeof link === "string" ? (
-                        <Link key={i} href="/" className="footer-category-link">
-                          {link}
-                        </Link>
-                      ) : (
+                    {section.footerLinks.map((link) => {
+              
+
+                      return (
                         <Link
-                          key={i}
-                          href={link.href}
-                          className="footer-category-link text-xl"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          key={link.routeLink}
+                          href={link.routeLink}
+                          className="footer-category-link flex items-center gap-2"
+                          target="_blank" // Optional for external links
                         >
-                          {link.icon}
+                          
+                          {link.linkText}
                         </Link>
-                      )
-                    )}
+                      );
+                    })}
                   </Flex>
                 </Flex>
               ))}

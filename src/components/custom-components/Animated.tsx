@@ -46,7 +46,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   children,
   animationVariant = 'fadeUp',
   duration = 0.5,
-  delay = 0.6,
+  delay = 0,
   threshold = 0.2,
   triggerOnce = false,
 }) => {

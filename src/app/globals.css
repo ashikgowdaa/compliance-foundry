@@ -16,7 +16,7 @@ body {
 
 :root {
   --background-linear-blue: linear-gradient(to right, #2D69FF, #2A4EAA, #4C73D4, #1E58E9);
-  --background-greyWhite: #F3F4FA;
+  --background-greyWhite: #EDEFF6;
   --background-whiteGray: #F3F5FA;
   --background-white: #fff;
   --background-blue: #2D69FF;

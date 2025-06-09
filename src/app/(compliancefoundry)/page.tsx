@@ -6,6 +6,7 @@ import PortfolioPage from "./(home)/resource/ResourceSection";
 import TestimonialSection from "./(home)/testimonials/Testimonilas";
 import { StaticWebsiteKeys } from "@/config";
 import PricingSection from "./(home)/pricing/Pricing";
+import CaseStudies from "@/components/caseStudies/CaseStudies";
 
 const ComplianceFoundry = () => {
   return (
@@ -16,7 +17,7 @@ const ComplianceFoundry = () => {
       <PortfolioPage websiteSection={StaticWebsiteKeys.CF} />
       <PricingSection websiteSection={StaticWebsiteKeys.CF}/>
      <TestimonialSection websiteSection={StaticWebsiteKeys.CF} />
-       {/* <ContactSection /> */}
+
     </>
   );
 };

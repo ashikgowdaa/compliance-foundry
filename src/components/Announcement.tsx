@@ -11,8 +11,6 @@ interface AnnouncementProps {
 }
 const Announcement = ({ announcementData }: AnnouncementProps) => {
   const trackRef = useRef<HTMLDivElement>(null);
-
-  // restart animation if the text changes
   useEffect(() => {
     if (!trackRef.current) return;
     trackRef.current.style.animation = "none";
@@ -23,10 +21,10 @@ const Announcement = ({ announcementData }: AnnouncementProps) => {
   if (!announcementData.showAnnouncement) return null;
 
   return (
-    <Wrapper  className="overflow-hidden text-text-secondary !py-2 fixed top-0 left-0 w-full z-50" style={{ background:"var(--color-background-linear-blue)" }}>
-      <div className="relative w-full">
+    <Wrapper  className="overflow-hidden text-text-secondary !py-2 !m-0 !px-0 w-full z-50  " style={{ background:"var(--color-background-linear-blue)" }}>
+      <div className="relative w-full h-fit">
         <div ref={trackRef} className=" text-center">
-          <span className="mr-8 text-xs sm:text-sm">📢 {announcementData.announcementText}</span>
+          <span className="mr-8 text-xs sm:text-sm"> {announcementData.announcementText}</span>
         </div>
       </div>
     </Wrapper>

@@ -77,7 +77,7 @@ const Pricing = ({ price }: any) => {
       className="!py-8 "
       ref={ref}
       style={{
-        backgroundImage: "radial-gradient(#00000069 0px, #F3F4FA 1px)",
+        backgroundImage: "radial-gradient(#00000069 0px, #EDEFF6 1px)",
         backgroundSize: "10px 10px",
       }}
     >
@@ -104,7 +104,7 @@ const Pricing = ({ price }: any) => {
                         <WalletMinimal strokeWidth={2.25} />{" "}
                         {price.pricingHeading}
                       </Flex>
-                      <h4 className="text-text-primary text-2xl font-medium text-shadow-lg secondary-font text-start">
+                      <h4 className="text-text-primary text-3xl font-medium secondary-font text-start">
                         {price.pricingSubHeading}
                       </h4>
                       <p className="text-text-tertiary font-medium text-sm">
@@ -120,13 +120,13 @@ const Pricing = ({ price }: any) => {
                   return (
                     <Flex
                       direction="col"
-                      className="bg-[#fafbfe]  w-full min-h-96 p-5 rounded-lg hover:border-2 ease-in-out duration-300 transition delay-150 border-text-blue hover:scale-105 shadow "
+                      className="bg-[#fafbfe]  w-full h-[500px] p-5 rounded-lg hover:border-2 ease-in-out duration-300 transition delay-150 border-text-blue hover:scale-105  "
                       align="start"
                       justify="between"
                     >
                       <Flex
                         justify="between"
-                        className="text-text-primary text-xl font-medium text-shadow-md uppercase secondary-font "
+                        className="text-text-primary text-[1.5rem] font-medium uppercase secondary-font "
                       >
                         {price.priceCardHeading}{" "}
                         {price?.priceCardTag && (

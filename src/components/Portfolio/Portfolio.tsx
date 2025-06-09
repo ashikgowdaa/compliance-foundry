@@ -27,8 +27,8 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
         <Flex className="w-[90%]" direction="col" gap="12">
           <AnimatedSection
             animationVariant="slideRight"
-            duration={0.8}
-            delay={0.8}
+            duration={0.5}
+         
           >
             {(inView: boolean) => (
               <Flex direction="col">
@@ -69,7 +69,7 @@ const Portfolio = ({ data }: { data: ResourceProps }) => {
                       justify="start"
                     >
                       {Icon && <Icon color="#2D69FF" size={30} strokeWidth={1.5}  />}
-                      <div className="text-text-primary text-xl w-1/2 font-medium secondary-font">
+                      <div className="text-text-primary text-xl w-[60%] font-medium secondary-font">
                         {item.title}
                       </div>
                       <div className="text-text-tertiary text-sm w-[95%] ">

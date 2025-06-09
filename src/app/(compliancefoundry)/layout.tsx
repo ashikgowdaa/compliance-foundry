@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import React from "react";
 import HeaderSection from "./(common)/header/page";
-import FooterSection from "./(common)/footer/page";
+import FooterSection from "./(common)/footer/Footer";
 import AnnouncementSection from "./(common)/announcement/page";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 export const metadata: Metadata = {
   title: "Compliance Foundry Website",
@@ -28,7 +27,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
   header: React.ReactNode;
-
   footer: React.ReactNode;
 }>) {
 
@@ -36,9 +34,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-         <AnnouncementSection />
+
         <HeaderSection />
+      <div className="">
         {children}
+      </div>
         <FooterSection />
       </body>
     </html>

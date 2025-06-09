@@ -30,7 +30,7 @@ const Services = ({ services }: { services: ServicesProps }) => {
                 <AnimatedSection
                   animationVariant="fadeDown"
                   duration={0.6}
-                  delay={0.8}
+                  delay={0.3}
                 >
                   {(inView) => (
                     <Flex gap="6" direction="col" className="py-6" >
@@ -41,7 +41,7 @@ const Services = ({ services }: { services: ServicesProps }) => {
                         {" "}
                         <Lightbulb strokeWidth={2} /> {services.serviceHeading}
                       </Flex>
-                      <h4 className="text-text-primary text-2xl sm:text-3xl font-medium text-shadow-lg secondary-font w-full">
+                      <h4 className="text-text-primary text-2xl sm:text-3xl font-medium  secondary-font w-full">
                         {services.serviceSubheading}
                       </h4>
                       <p className="text-text-tertiary font-normal text-sm sm:text-base">

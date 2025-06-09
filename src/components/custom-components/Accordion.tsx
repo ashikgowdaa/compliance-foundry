@@ -48,14 +48,14 @@ export default function Accordion({ accordionData }: AccordionProps) {
               >
                 <div className="flex items-baseline gap-4 secondary-font sm:gap-16">
                   <span
-                    className={`text-md  text-wrap font-medium text-shadow-md sm:text-2xl ${
+                    className={`text-md  text-wrap font-medium  sm:text-2xl ${
                       open ? "text-text-blue" : "text-text-primary"
                     }`}
                   >
                     {parseInt(accordionId).toString().padStart(2, "0")}
                   </span>
                   <span
-                    className={`w-12 sm:w-full uppercase text-wrap font-medium text-shadow-md ${
+                    className={`w-12 sm:w-full  text-wrap font-medium  ${
                       open ? "text-text-blue" : "text-text-primary"
                     } tracking-wider text-start text-sm sm:text-2xl`}
                   >
@@ -81,15 +81,15 @@ export default function Accordion({ accordionData }: AccordionProps) {
                     : "max-h-0 opacity-0 py-0"
                 } flex justify-between gap-12 items-start sm:flex-row flex-col`}
               >
-                <p className="text-sm sm:text-normal max-w-xl w-full text-text-tertiary text-justify">
+                <p className="text-sm sm:text-normal max-w-xl w-1/2 text-text-tertiary text-justify">
                   {accordionContentDescription}
                 </p>
 
-                <div className="w-full flex justify-center h-[250px] rounded-md">
+                <div className="w-1/2 flex align-middle justify-end h-[250px] rounded-md">
                   <img
                     src={imageGenerationUrl(accordionImage.url) }
                     alt={accordionImage.alt || accordionTitle}
-                    className="h-full w-full object-contain group-hover:scale-105 transition rounded-2xl"
+                    className="h-full w-full object-contain   rounded-2xl"
                   />
                 </div>
               </div>

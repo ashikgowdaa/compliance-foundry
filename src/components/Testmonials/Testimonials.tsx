@@ -54,8 +54,12 @@ const Testimonials = ({
                         {testimonialData.testimonialHeading}
                       </Flex>
                       <Flex justify="between" direction="col-sm-row">
-                        <Flex justify="start" align="start" responsiveWidth="full-sm-half" className="text-text-primary text-3xl font-medium text-shadow-lg secondary-font">
-                          {testimonialData.testimonialSubHeading}
+                        <Flex justify="start" align="start" responsiveWidth="full-sm-half" className="text-text-primary text-3xl font-medium  secondary-font leading-11">
+                      
+                          <span dangerouslySetInnerHTML={{
+  __html: testimonialData.testimonialSubHeading.replace('Fast and', 'Fast <br/> and')
+}} />
+
                         </Flex>
                         <Flex justify="start-sm-center" align="start" responsiveWidth="full-sm-half" className="text-text-tertiary  text-sm">
                           {" "}

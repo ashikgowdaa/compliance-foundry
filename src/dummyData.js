@@ -1,3 +1,4 @@
+
 import { Instagram, Linkedin, X, Youtube } from "lucide-react"; 
 
 export  const headerDataWebsite = {
@@ -57,6 +58,7 @@ export const bannerData = {
 
 
   export const aboutData = {
+
     title: "EPIC BEGINNINGS: UNVEILING OUR ESSENCE",
     subtitle: "CRAFTING FUTURE WITH EXCELLENCE",
     sectionLabel: "who we are",
@@ -71,3 +73,315 @@ export const bannerData = {
     },
   };
   
+
+
+  export const caseStudiesData = {
+    label: "Case Studies",
+    subtitle: "Explore our success stories",
+    studies: [
+      {
+        id:1,
+        title: "Case Study 1",
+        description: "<p>This is <strong>rich</strong> text with <a href='https://example.com'>links</a>, lists, and more.</p>",
+        image: "/images/case1.jpg",
+        contentComponent : [
+          {
+            title: "Our Approach",
+            descriptionContent: "<p>This is <strong>rich</strong> text with <a href='https://example.com'>links</a>, lists, and more.</p>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            id:2,
+            title: "Results Achieved",
+            descriptionContent: "<ul><li>First benefit of using our platform</li><li>Second feature highlighted clearly</li><li>Third point to consider</li></ul>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+        ]
+      },
+      {
+        id:3,
+        title: "Case Study 2",
+        contentComponent : [
+          {
+            title: "Our Approach",
+            descriptionContent: "<p>This is <strong>rich</strong> text with <a href='https://example.com'>links</a>, lists, and more.</p>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            title: "Results Achieved",
+            descriptionContent: "<ul><li>First benefit of using our platform</li><li>Second feature highlighted clearly</li><li>Third point to consider</li></ul>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+        ]    ,
+        image: "/images/case2.jpg",
+      },
+      {
+        title: "Case Study 3",
+        contentComponent : [
+          {
+            title: "Our Approach",
+            descriptionContent: "<p>This is <strong>rich</strong> text with <a href='https://example.com'>links</a>, lists, and more.</p>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            title: "Results Achieved",
+            descriptionContent: "<ul><li>First benefit of using our platform</li><li>Second feature highlighted clearly</li><li>Third point to consider</li></ul>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+        ],
+        image: "/images/case3.jpg",
+      },
+      {
+        title: "Case Study 3",
+        contentComponent : [
+          {
+            title: "Our Approach",
+            descriptionContent: "<p>This is <strong>rich</strong> text with <a href='https://example.com'>links</a>, lists, and more.</p>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            title: "Results Achieved",
+            descriptionContent: "<ul><li>First benefit of using our platform</li><li>Second feature highlighted clearly</li><li>Third point to consider</li></ul>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+        ],
+        image: "/images/case3.jpg",
+      },
+      {
+        title: "Case Study 3",
+        contentComponent : [
+          {
+            title: "Our Approach",
+            descriptionContent: "<p>This is <strong>rich</strong> text with <a href='https://example.com'>links</a>, lists, and more.</p>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            title: "Results Achieved",
+            descriptionContent: "<ul><li>First benefit of using our platform</li><li>Second feature highlighted clearly</li><li>Third point to consider</li></ul>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+        ],
+        image: "/images/case3.jpg",
+      },
+      {
+        title: "Case Study 3",
+        contentComponent : [
+          {
+            title: "Our Approach",
+            descriptionContent: "<p>This is <strong>rich</strong> text with <a href='https://example.com'>links</a>, lists, and more.</p>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            title: "Results Achieved",
+            descriptionContent: "<ul><li>First benefit of using our platform</li><li>Second feature highlighted clearly</li><li>Third point to consider</li></ul>",
+            "images": {
+              "data": [
+                {
+                  "id": 10,
+                  "attributes": {
+                    "url": "/uploads/image1.jpg",
+                    "alternativeText": "Image 1"
+                  }
+                },
+                {
+                  "id": 11,
+                  "attributes": {
+                    "url": "/uploads/image2.jpg",
+                    "alternativeText": "Image 2"
+                  }
+                }
+              ]
+            }
+          },
+        ],
+        image: "/images/case3.jpg",
+      },
+    ],
+  }

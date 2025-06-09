@@ -10,7 +10,8 @@ export default async function TestimonialSection({
 }) {
 
   const data = await getMethod({ url: API_ENDPOINTS.testimonial.getTestimonials });
-  if (!data || !data?.data )
+  console.log(data, "testimonial data");
+  if (!data || !data?.data || data?.data[0]?.WebsiteDomain?.webSiteKeys !== websiteSection )
     return <ErrorComponent errorText="Error Fetching Testimonial Data " />;
 
   return <Testimonials testimonialData= {data?.data[0]} />;
